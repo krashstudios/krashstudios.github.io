@@ -1,0 +1,1133 @@
+/* ===========================================================================
+    Global Styles
+   =========================================================================== */
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'open sans', serif;
+  background-color: #4e4d4a;
+}
+
+/* All Visable Content Displayed on this Panel */
+#panel {
+  background-color: #f2f2f2;
+}
+
+/* Center aligns h1 text */
+h1.center {
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Center aligns h3 text and changes color to grey */
+h3.grey {
+  color: #777777;
+  text-align: center;
+  font-weight: lighter;
+}
+
+/* Takes the padding away from the ul  */
+ul {
+  padding: 0;
+}
+
+/* Adds a Grey Background */
+.grey-background {
+  background-color: #DCDCDC;
+  padding: 10px;
+}
+
+th {
+  font-size: 1.2em;
+  font-family: 'Quicksand';
+  font-weight: lighter;
+  text-align: left;
+  color: #555;
+}
+
+td {
+  width: 50%;
+  color: #777;
+  line-height: 1.3;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+
+/* Alternate General Styles for Bigger Screens
+   =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {
+
+  th {
+    font-size: 1.3em;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+
+  /* Centers Content On Page */
+  .wrapper {
+    margin:0 auto;
+    width:940px;
+    padding:15px;
+  }
+
+  /* Centers Content On Page With Out Padding*/
+  .wrapper-nopad {
+    margin:0 auto;
+    width:940px;
+  }
+
+  th {
+    font-size: 1.4em;
+  }
+
+
+
+}
+
+
+
+/* ===========================================================================
+   Header
+   =========================================================================== */
+
+/* General Header Styles */
+header {
+  background-color:#243133;
+  border-bottom: #94BA65 3px solid;
+  height:50px;
+}
+
+/* Header Logo/Home Link Image */
+#mobile-logo {
+  display: block;
+  margin: -6px auto;
+}
+
+#logo {
+  display: none;
+}
+
+
+/* Alternate Header Styles for Bigger Screens
+   =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {
+
+  header {
+    height: 70px;
+    border-bottom: #94BA65 4px solid;
+  }
+
+  #mobile-logo {
+    display: none;
+  }
+
+  #logo {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 20px;
+  }
+
+
+
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+
+  header {
+    height: 94px;
+    border-bottom: #94BA65 6px solid;
+  }
+
+  .wrapper {
+    padding-top: 0;
+  }
+
+  #logo {
+    float: left;
+    width: 45%;
+    height: auto;
+    margin: 15px 0;
+    padding: 18px 0;
+  }
+
+}
+
+
+/* ===========================================================================
+   Navigation
+   =========================================================================== */
+
+   .toggle-button {
+     display: block;
+     position: relative;
+     top: 15px;
+     margin-left: 20px;
+     z-index: 1;
+
+     -webkit-user-select: none;
+     user-select: none;
+   }
+
+   .toggle-button input
+   {
+     display: block;
+     width: 40px;
+     height: 32px;
+     position: absolute;
+     top: -7px;
+     left: -5px;
+     cursor: pointer;
+
+     opacity: 0; /* hides this */
+     z-index: 2; /* and place it over the hamburger */
+
+     -webkit-touch-callout: none;
+   }
+
+   /*
+    * Hamburger
+    */
+   .toggle-button span
+   {
+     display: block;
+     width: 33px;
+     height: 4px;
+     margin-bottom: 5px;
+     position: relative;
+     background: #f2f2f2;
+     border-radius: 3px;
+
+     z-index: 1;
+
+     transform-origin: 4px 0px;
+
+     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                 background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                 opacity 0.55s ease;
+   }
+
+   .toggle-button span:first-child
+   {
+     transform-origin: 0% 0%;
+   }
+
+   .toggle-button span:nth-last-child(2)
+   {
+     transform-origin: 0% 100%;
+   }
+
+   /*
+    * Transform all the slices of hamburger
+    * into a crossmark.
+    */
+   .toggle-button input:checked ~ span
+   {
+     opacity: 1;
+     transform: rotate(45deg) translate(0, 0);
+     background: #f2f2f2;
+   }
+
+   /*
+    * Hides the middle one.
+    */
+   .toggle-button input:checked ~ span:nth-last-child(2)
+   {
+     opacity: 0;
+     transform: rotate(0deg) scale(0.2, 0.2);
+   }
+
+   /*
+    *  last one should go the other direction
+    */
+   .toggle-button input:checked ~ span:nth-last-child(1)
+   {
+     transform: rotate(-45deg) translate(-2px, -2px);
+   }
+
+
+
+
+/* Slideout Menu Styles */
+.slideout-menu {
+ position: fixed;
+ left: 0;
+ top: 0;
+ bottom: 0;
+ right: 0;
+ z-index: 0;
+ width: 256px;
+ overflow-y: scroll;
+ -webkit-overflow-scrolling: touch;
+ display: none;
+}
+
+/* This is Where All the Main Content Sits On */
+.slideout-panel {
+ position: relative;
+ z-index: 1;
+ will-change: transform;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+ overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+ display: block;
+}
+
+/* Menu 'a' Link Styles */
+a {
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  line-height: 2em;
+  text-decoration: none;
+}
+
+/* Color of Link on Hover */
+a:hover {
+  color: #94BA65;
+}
+
+a:visited {
+  color: #94BA65;
+}
+
+/* Display 5th Link as a Different Color */
+ #menu a:nth-child(7) li {
+  color: #94BA65;
+}
+
+/* Display 5th Link Hover as a Different Color */
+#menu a:nth-child(7) li:hover {
+  color: #2790b0;
+}
+
+/* Removes List Dots */
+#menu ul {
+  list-style: none;
+}
+
+#menu {
+  margin-left: 20px;
+}
+
+/* Removes Desktop Navigation from Mobile */
+.desktop-nav {
+  display: none;
+}
+
+
+/* Alternate Navigation Styles for Bigger Screens
+   =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {
+
+  .toggle-button {
+    top: 25px;
+  }
+
+  /* Removes Desktop Navigation from Mobile */
+  .desktop-nav {
+    display: none;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+
+  .toggle-button {
+    display: none;
+  }
+
+  /* Header Desktop Navigation */
+  .desktop-nav {
+    display: block;
+    margin: 6px 0;
+    padding: 18px 0;
+    float: right;
+    z-index: 20;
+  }
+
+  /* Removing padding, margin and "list-style" from the "ul",
+   * and adding "position:reltive" */
+  .desktop-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+  }
+
+  /* Positioning the navigation items inline */
+  .desktop-nav ul li {
+    margin: 0px -7px 0 0;
+    display: inline-block;
+    background-color: #243133;
+  }
+
+  /* Styling the links */
+  .desktop-nav a {
+    display: -block;
+    padding: 0 10px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 50px;
+    text-decoration: none;
+  }
+
+  /* Link color change on Hover */
+  .desktop-nav a:hover {
+    color: #94BA65;
+  }
+
+  /* Color of Link when Visited */
+  .desktop-nav a:visited {
+    color: #94BA65;
+  }
+
+  /* Hide Dropdowns by Default
+   * and giving it a position of absolute */
+  .desktop-nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+  }
+
+  /* Displays Dropdown on Hover */
+  .desktop-nav ul li:hover>ul {
+    display: inherit;
+    z-index: 10;
+  }
+
+  /* Dropdown */
+  .desktop-nav ul ul li {
+    min-width: 170px;
+    display: list-item;
+    position: relative;
+  }
+
+  /* Display 5th Link as a Different Color */
+  .desktop-nav li:nth-child(5) a {
+    color: #94BA65;
+  }
+
+  /* Display 5th Link Hover as a Different Color */
+  .desktop-nav li:nth-child(5) a:hover {
+    color: #2790b0;
+  }
+
+}
+
+
+/* ===========================================================================
+   Above the Fold HomePage
+   =========================================================================== */
+
+#hero {
+  background-image: url(../img/hero-mobile.jpg);
+  background-size: cover;
+  position: relative;
+  height: 45vh;
+  z-index: -1;
+}
+
+.overlay {
+ position: absolute;
+ top: 80%;
+ text-align: center;
+ width: 93%;
+ color: white;
+ -ms-transform: translate(0,-50%); /* IE 9 */
+   -webkit-transform: translate(0,-50%); /* Safari */
+   transform: translate(0,-50%);
+}
+
+h1.blue-background {
+  background-color: #2790b0;
+  border: 1px solid #2790b0;
+  width: auto;
+  height: auto;
+  padding: 5px 0;
+  margin: 3px 0;
+  text-align: center;
+}
+
+.overlay h3 {
+  margin-top: 0;
+}
+
+.mid-nav {
+  display: none;
+}
+
+/* Alternate  Styles for Bigger Screens
+   =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {
+
+  #hero {
+   background-image: url(../img/hero.jpg);
+   background-size: cover;
+   position: relative;
+   height: 65vh;
+   z-index: -1;
+  }
+
+  .overlay {
+   position: absolute;
+   top: 40%;
+   text-align: center;
+   width: 40%;
+   color: white;
+   -ms-transform: translate(0,-50%); /* IE 9 */
+     -webkit-transform: translate(0,-50%); /* Safari */
+     transform: translate(0,-50%);
+  }
+
+  h1.blue-background {
+    background-color: #2790b0;
+    border: 1px solid #2790b0;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .mid-nav {
+    display: block;
+    background-color: #243133;
+  }
+
+  #img-map {
+    display: block;
+    position: relative;
+    bottom: -1;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+
+  #img-map {
+    width: auto;
+    height: auto;
+  }
+
+/*
+  .mid-nav {
+    background-color: #243133;
+  }
+
+  .img-map {
+    position: relative;
+    bottom: -1;
+  }*/
+}
+
+
+/* ===========================================================================
+   Testimonial Slider 'placeholder'
+   =========================================================================== */
+
+.testimonials h1 {
+  padding-top: 40px;
+}
+
+.testimonial {
+  text-align: center;
+  max-width: 850px;
+  margin: 80px auto 90px auto;
+  padding: 0 20px;
+}
+
+/* Takes the Square image and turns it into a Circle */
+.testimonial-avatar {
+  width: 100px;
+  border-radius: 50%;
+}
+
+/* Text Styles for the Quoate */
+.testimonial-quote {
+  display: block;
+  font-size: 1.1em;
+  font-weight: 300;
+  padding: 10px 0;
+}
+
+/* Authours Name Styles */
+.testimonial-author {
+  display: block;
+  font-weight: 800;
+  color: #7AA641;
+}
+
+/* Alternate Styles for Bigger Screens
+   =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {
+
+  .testimonial-quote {
+    font-size: 1.4em;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {}
+
+
+/* ===========================================================================
+   Testimonial/Contact Form
+   =========================================================================== */
+
+.formjs h1 {
+  padding-top: 35px;
+}
+
+   form{
+     width:60%;
+     margin:0 auto;
+   }
+
+   label, input, textarea{
+     display:block;
+     background:transparent;
+     width:100%;
+     padding-left:15px;
+     padding-bottom:10px;
+     padding-top:10px;
+   }
+
+   label, input {
+     height:30px;
+   }
+
+
+   label {
+     font-weight:700;
+     color: #fafafa;
+     transition: all 0.2s ease;
+     transform:translate(0px,55px);
+     z-index:1;
+     position:relative;3
+   }
+
+   label.focus{
+     transform:translate(0,10px);
+     color: black;
+   }
+
+   input, textarea{
+     border:0 none;
+     border-bottom:1px solid #fafafa;
+     color: black;
+     font-size:17px;
+     font-weight:bold;
+     background:transparent;
+     z-index:2;
+     position:relative;
+     transition:background 0.2s ease;
+   }
+
+   input:focus,
+   select:focus,
+   textarea:focus,
+   button:focus {
+       outline: none;
+       background:#fafafa;
+   }
+
+   textarea{
+     resize:none;
+   }
+
+   input.submit {
+     font-size:17px;
+     color:#fafafa;
+     width:50%;
+     margin:15px auto;
+     border: 5px solid #fafafa;
+     height:initial;
+     cursor:pointer;
+     transition:background-color 0.2s ease, border-color 0.2s ease;
+   }
+   input.submit:hover{
+     background-color:#2790b0;
+     border-color:#2790b0;
+   }
+
+
+
+/* ===========================================================================
+   Footer
+   =========================================================================== */
+
+/* General Footer Styles */
+footer {
+  background-color:#243133;
+  border-bottom: #94BA65 3px solid;
+  height:auto;
+}
+
+/* Footer Logo/Home Link Image */
+#footer-logo {
+  display: block;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+/* Social/Contact Icons */
+.social-icons {
+  text-align: center;
+}
+
+/* Display Icons Horizontaly */
+.social-icons ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px 10px 0;
+}
+
+/* Copyright Styling * forces copyright to bottom center */
+.copyright {
+  position:relative;
+  width: 100%;
+  color: #666;
+  font-size: .6em;
+  text-align: center;
+  bottom: 0;
+}
+
+.bottom-nav {
+  display: none;
+}
+
+/* Alternate Footer Styles for Bigger Screens
+   =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {
+
+  footer {
+    height: 70px;
+    border-bottom: #94BA65 4px solid;
+  }
+
+  /* Footer Logo/Home Link Image */
+  #footer-logo {
+    float: left;
+    margin-left: 40px;
+    padding: 28px;
+  }
+
+  /* Social/Contact Icons */
+  .social-icons {
+    float: right;
+    text-align: center;
+    margin-right: 50px;
+  }
+
+  /* Display Icons Horizontaly */
+  .social-icons ul li {
+    padding: 0 10px;
+  }
+
+  /* Copyright Styling * forces copyright to bottom center */
+  .copyright {
+    position:absolute;
+    font-size: .7em;
+  }
+
+  .bottom-nav {
+    display: none;
+  }
+
+}
+
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+
+  footer {
+    height: 94px;
+    border-bottom: #94BA65 6px solid;
+  }
+
+
+  /* Footer Logo/Home Link Image */
+  #footer-logo {
+    margin-left: 0;
+    margin: 12px 0;
+    padding: 28px 0;
+  }
+
+  /* Footer Navigation */
+  .bottom-nav {
+    display: block;
+    padding: 22px 0;
+    float: left;
+    margin-left: 80px;
+  }
+
+  /* Removing padding, margin and "list-style" from the "ul",
+   * and adding "position:reltive" */
+  .bottom-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+  }
+
+  /* Positioning the navigation items inline */
+  .bottom-nav ul li {
+    margin: 0px -7px 0 0;
+    display: inline-block;
+  }
+
+  /* Styling the links */
+  .bottom-nav a {
+    display: -block;
+    padding: 0 10px;
+    color: #666;
+    font-size: .8em;
+    font-weight: lighter;
+    line-height: 50px;
+    text-decoration: none;
+  }
+
+  /* Link color change on Hover */
+  .bottom-nav a:hover {
+    color: #94BA65;
+  }
+
+  /* Color of Link when Visited */
+  .bottom-nav a:visited {
+    color: #94BA65;
+  }
+
+  /* Social/Contact Icons */
+  .social-icons {
+    margin-right: 0;
+    margin: 13px 0;
+  }
+
+  /* Readjust Padding so its in-line with Wrapper */
+  .social-icons ul li {
+    padding-right: 0;
+    padding-left: 20px;
+  }
+
+  /* Copyright Styling * forces copyright to bottom center */
+  .copyright {
+    position:absolute;
+    width: 940px;
+    font-size: .8em;
+    text-align: center;
+  }
+
+}
+
+
+/* ===========================================================================
+   Page Specific Styles
+   =========================================================================== */
+
+
+/* ===========================================================================
+   Landscaping Page
+  =========================================================================== */
+
+  .landscape-hero {
+    height: 400px;
+    background-image: url(../img/dirt.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 25% auto;
+    padding: 0 25px;
+  }
+
+  .landscape-hero h1 {
+    font-family: 'Quicksand';
+    font-weight: lighter;
+    font-size: 2.4em;
+    margin-top: 0;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .landscape-hero p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  .landscape-services h1 {
+    font-size: 2.5em;
+    font-weight: lighter;
+    text-align: center;
+    color: #555;
+  }
+
+  .landscape-services h3 {
+    color: #777777;
+    text-align: center;
+    font-weight: lighter;
+  }
+
+
+/* Alternate  Landscaping Page Styles for Bigger Screens
+  =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+
+  .landscape-hero h1 {
+    font-size: 3em;
+  }
+}
+
+
+
+/* ===========================================================================
+   LawnCare Page
+   =========================================================================== */
+
+.lawncare-hero {
+  height: 550px;
+  background-color: white;
+  background-image: url(../img/grass.jpg);
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 100% auto;
+  padding: 0 25px;
+}
+
+.lawncare-hero h1 {
+  font-family: 'Quicksand';
+  font-weight: lighter;
+  font-size: 2.4em;
+  margin-top: 0;
+  padding: 40px;
+  text-align: center;
+}
+
+.lawncare-hero p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.lawncare-services h1 {
+  font-size: 2.5em;
+  font-weight: lighter;
+  text-align: center;
+  color: #555;
+}
+
+.lawncare-services h3 {
+  color: #777777;
+  text-align: center;
+  font-weight: lighter;
+}
+
+
+/* Alternate LawnCare Page Styles for Bigger Screens
+   =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {
+
+  .lawncare-hero p {
+    font-size: 1.1em;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+
+  .lawncare-hero {
+    background-size: auto;
+  }
+
+  .lawncare-hero h1 {
+    font-size: 3em;
+  }
+
+  .lawncare-hero p {
+    font-size: 1.2em;
+  }
+
+}
+
+
+/* ===========================================================================
+    SnowRemoval page
+   =========================================================================== */
+
+   .snowremoval-hero {
+     height: 400px;
+     background-image: url(../img/snow.png);
+     background-repeat: no-repeat;
+     background-position: bottom;
+     background-size: 100% auto;
+     padding: 0 25px;
+   }
+
+   .snowremoval-hero h1 {
+     font-family: 'Quicksand';
+     font-weight: lighter;
+     font-size: 2.4em;
+     margin-top: 0;
+     padding: 40px;
+     text-align: center;
+   }
+
+   .snowremoval-hero p {
+     font-size: 1em;
+     line-height: 1.5;
+   }
+
+   .snowremoval-services {
+     padding: 10px;
+   }
+
+   .snowremoval-services h1 {
+     font-size: 2.5em;
+     font-weight: lighter;
+     text-align: center;
+     color: #555;
+   }
+
+   .snowremoval-services h3 {
+     color: #777777;
+     text-align: center;
+     font-weight: lighter;
+   }
+
+
+/* Alternate SnowRemoval Page Styles for Bigger Screens
+   =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+
+  .snowremoval-hero h1 {
+    font-size: 3em;
+  }
+}
+
+
+
+/* ===========================================================================
+   Company Page
+   =========================================================================== */
+
+.ourstory {
+  padding: 0 25px;
+}
+
+.ourstory h1 {
+  font-family: 'Quicksand';
+  font-weight: lighter;
+  font-size: 2.4em;
+  text-align: center;
+}
+
+.ourstory q {
+  font-size: 1.4em;
+  font-style: italic;
+}
+
+.ourstory p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.ourstory img {
+  height: 30px;
+  width: auto;
+}
+
+
+/* Alternate Company Page Styles for Bigger Screens
+   =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {
+
+  .ourstory img {
+    height: 40px;
+    width: auto;
+  }
+
+  .ourstory p {
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+
+  .ourstory h1 {
+    font-size: 3em;
+    text-align: center;
+  }
+
+  .ourstory img {
+    height: 50px;
+    width: auto;
+  }
+
+  .ourstory p {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+
+
+}
+
+
+
+
+
+/* ===========================================================================
+    Page
+   =========================================================================== */
+
+
+/* Alternate  Page Styles for Bigger Screens
+   =========================================================================== */
+
+/* Tablets */
+@media only all and (min-width: 768px) {}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {}
