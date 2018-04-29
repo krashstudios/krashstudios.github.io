@@ -1,0 +1,88 @@
+/* Form Layout Styles */
+.get-in-touch {
+   max-width: 750px;
+   margin: 0 auto;
+}
+
+.label {
+  position: absolute;
+  left: 20px;
+  bottom: 11px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #888;
+  cursor: text;
+  transition: transform .2s ease-in-out;
+}
+
+.contact-form .form-field {
+  position: relative;
+}
+
+input, select {
+  padding: 0 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+
+  border: none;
+  height: 40px;
+  margin: 0;
+  outline: 0;
+  width: 100%;
+  background-color: rgb(247,247,247);
+  color: rgb(85,85,85);
+  margin-bottom: 15px;
+}
+
+/* Fieldset Styles */
+fieldset {
+  border: none;
+}
+
+/* Legend Styles */
+legend {
+  font-size: 1.5rem;
+}
+
+/* Text Area Styles */
+textarea {
+  height: 140px !important;
+  padding: 10px 10px;
+  width: 100%;
+}
+
+/* Validation Styles */
+
+
+/* Grid */
+.row::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.col {
+  padding-right: 40px;
+  float: left;
+  box-sizing: border-box;
+}
+
+.x-50 {
+  width: 50%;
+}
+
+.x-100 {
+  width: 100%;
+}
