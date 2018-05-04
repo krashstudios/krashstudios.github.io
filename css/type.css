@@ -62,11 +62,13 @@ ol ol {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 blockquote {
   line-height: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+
 /* Headings */
 h1,
 h2,
@@ -128,7 +130,10 @@ legend {
   color: rgb(51,51,51);
   padding-bottom: 1rem;
 }
-
+/* FINAL PROJECT REQUIRMENT * Address *
+   Added 04/27/2018
+   - Styling falls in line with rest of site
+*/
 address {
   color: #666;
   color: rgb(102, 102, 102);
@@ -151,6 +156,7 @@ code {
   margin-top: 0;
 }
 
+/* Lighter font weight */
 .light {
   font-weight: 300;
 }
