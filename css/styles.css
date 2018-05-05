@@ -432,7 +432,7 @@ footer .newsletter input {
 /* ------ Home Page ------ */
 /* Pushes Content below Header */
 main.homePg {
-  padding-top: 2.3em;
+  padding-top: 0;
 }
 
 .header#home-header {
@@ -487,7 +487,7 @@ main.homePg {
 
 .testimonials::before {
   content: '';
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   z-index: -1;
@@ -500,7 +500,6 @@ main.homePg {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-clip: border-box;
   filter: grayscale(80%);
 }
 .testimonials {
@@ -510,6 +509,15 @@ main.homePg {
   z-index: 0;
   text-align: center;
 }
+.testimonial-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(67,166,216,0.7);
+}
+
 .testimonial-image {
   border: 3px solid rgba(255,255,255,0.6);
   border-radius: 50%;
@@ -1035,8 +1043,6 @@ ul.social-icons {
 
 
 blockquote {
-
-
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
