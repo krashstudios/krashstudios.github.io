@@ -16,13 +16,6 @@ body {
   display: table;
 }
 
-/* Sticks the Header to the Top */
-.sticky {
-  position: sticky;
-  position: -webkit-sticky; /* Safari */
-  top: 0;
-}
-
 .fixed {
   position: fixed;
 }
@@ -46,7 +39,7 @@ body {
 }
 
 @media (min-width: 576px) {
-  .container, .container-grey {
+  .container {
     max-width: 540px;
   }
 }
@@ -280,6 +273,11 @@ nav ul {
 /* ==========================================================================
    Footer
    ========================================================================== */
+.contact-info {
+  background-color: rgb(247,247,247);
+  padding: 70px 0;
+  text-align: center;
+  }
 
 footer {
   background-color: rgb(33,33,33);
@@ -456,6 +454,33 @@ main.homePg {
   top: 320px;
 }
 
+/* infinite brand scroll marquee */
+.brand-loop {
+    height: 260px;
+    width: 5896px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.brand-loop img {
+    padding: 30px;
+    transition: all 0.5s ease;
+}
+.brand-loop img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/* keyframe animations */
+.first-loop-img {
+  animation: bannermove 40s linear infinite;
+}
+@keyframes bannermove {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -5974px;
+ }
+}
 .brand-marquee::before {
   content: '';
   position: absolute;
@@ -485,6 +510,7 @@ main.homePg {
   padding-bottom: 2em;
 }
 
+/* testimonials */
 .testimonials::before {
   content: '';
   position: relative;
@@ -534,6 +560,24 @@ main.homePg {
 .testimonials p {
   color: white;
 }
+
+blockquote {
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: white;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
 
 
 /* ------ Contact Page ------ */
@@ -587,12 +631,6 @@ main.homePg {
 
 #time-table td:first-child {
   padding-right: 50px;
-}
-
-.contact-info {
-  background-color: rgb(247,247,247);
-  padding: 70px 0;
-  text-align: center;
 }
 
 .info-box {
@@ -701,7 +739,7 @@ main.homePg {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 2.5em 0;
 }
 .provider-info ul {
@@ -731,7 +769,7 @@ main.homePg {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding-top: 6em;
 }
 
@@ -818,116 +856,6 @@ main.homePg {
   margin-top: 10px;
   text-align: center;
 }
-
-
-
-/***********************************[SANDBOX]***********************************/
-
-/* infinite brand scroll marquee */
-
-.brand-loop {
-    height: 260px;
-    width: 5896px;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.brand-loop img {
-    padding: 30px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-.brand-loop img:hover {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    cursor: pointer;
-
-    /*-webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);*/
-    /*-moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);*/
-    /*box-shadow: 0px 3px 5px rgba(0,0,0,0.2);*/
-}
-
-/*keyframe animations*/
-.first-loop-img {
-    -webkit-animation: bannermove 40s linear infinite;
-       -moz-animation: bannermove 40s linear infinite;
-        -ms-animation: bannermove 40s linear infinite;
-         -o-animation: bannermove 40s linear infinite;
-            animation: bannermove 40s linear infinite;
-}
-
-@keyframes "bannermove" {
- 0% {
-    margin-left: 0px;
- }
- 100% {
-    margin-left: -5974px;
- }
-
-}
-
-@-moz-keyframes bannermove {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -5974px;
- }
-
-}
-
-@-webkit-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -5974px;
- }
-
-}
-
-@-ms-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -5974px;
- }
-
-}
-
-@-o-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -5974px;
- }
-
-}
-
-
-/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[SANDBOX]^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
-
-
-/* ==========================================================================
-
-
-    ==========================================================================
-    Done Below This Point
-    ==========================================================================
-
-
-   ========================================================================== */
-
-
 
 
 /* ==========================================================================
@@ -1065,22 +993,4 @@ ul.social-icons {
   background-color: rgb(0,119,181);
   border-radius: 50%;
   transition: background-color 0.3s ease-in-out;
-}
-
-
-blockquote {
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-}
-blockquote:before {
-  color: white;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
 }
