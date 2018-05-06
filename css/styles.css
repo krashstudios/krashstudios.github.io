@@ -56,9 +56,9 @@ body {
   }
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 1200px) {
   .container {
-    max-width: 1200px;
+    max-width: 1140px;
   }
 }
 
@@ -214,10 +214,10 @@ nav ul {
   top: 0;
 }
 
-/* Media Queries */
-/* 48em = 768px */
+/* header Media Queries */
 
-@media (min-width: 48em) {
+
+@media (min-width: 768px) {
   nav li {
     float: left;
   }
@@ -275,9 +275,70 @@ nav ul {
    ========================================================================== */
 .contact-info {
   background-color: rgb(247,247,247);
-  padding: 70px 0;
   text-align: center;
   }
+.contact-info .container {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.info-box {
+  margin: 45px 0;
+}
+.info-box p {
+  margin-top: 5px;
+}
+.info-box h5 {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+/* children of contact-info */
+.info-box.address {
+  flex-basis: 175px;
+}
+.info-box.phone {
+  flex-basis: 175px;
+}
+.info-box.email {
+  flex-basis: 175px;
+}
+.info-box.website {
+  flex-basis: 175px;
+}
+
+@media (max-width: 768px) {
+  .info-box.address {
+    flex-basis: 50%;
+  }
+  .info-box.phone {
+    flex-basis: 50%;
+  }
+  .info-box.email {
+    flex-basis: 50%;
+  }
+  .info-box.website {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 415px) {
+  .info-box.address {
+    flex-basis: 100%;
+  }
+  .info-box.phone {
+    flex-basis: 100%;
+  }
+  .info-box.email {
+    flex-basis: 100%;
+  }
+  .info-box.website {
+    flex-basis: 100%;
+  }
+}
+
 
 footer {
   background-color: rgb(33,33,33);
@@ -631,21 +692,6 @@ blockquote p {
 
 #time-table td:first-child {
   padding-right: 50px;
-}
-
-.info-box {
-  width: 24%;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.info-box p {
-  margin-top: 5px;
-}
-
-.info-box h5 {
-  margin-top: 0.5rem;
-  font-weight: 600;
 }
 
 #buttons #submit-btn {
