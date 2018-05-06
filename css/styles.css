@@ -312,30 +312,30 @@ nav ul {
 
 @media (max-width: 768px) {
   .info-box.address {
-    flex-basis: 50%;
+    flex-basis: 40%;
   }
   .info-box.phone {
-    flex-basis: 50%;
+    flex-basis: 40%;
   }
   .info-box.email {
-    flex-basis: 50%;
+    flex-basis: 40%;
   }
   .info-box.website {
-    flex-basis: 50%;
+    flex-basis: 40%;
   }
 }
 @media (max-width: 415px) {
   .info-box.address {
-    flex-basis: 100%;
+    flex-basis: 60%;
   }
   .info-box.phone {
-    flex-basis: 100%;
+    flex-basis: 60%;
   }
   .info-box.email {
-    flex-basis: 100%;
+    flex-basis: 60%;
   }
   .info-box.website {
-    flex-basis: 100%;
+    flex-basis: 60%;
   }
 }
 
