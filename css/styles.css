@@ -727,13 +727,23 @@ blockquote p {
    ** DATE: 04/23/2018 **
    ** REASONING ** */
 
+.contactPg {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .get-in-touch {
-  float: left;
+  flex-basis: 80%;
+  /*float: left;*/
 }
 
 .office-hours {
+  flex-basis: 20%;
   padding-left: 20px;
-  float: right;
+  /*float: right;*/
   margin-top: -22px;
 }
 
@@ -833,8 +843,15 @@ blockquote p {
   border-radius: 50%;
   padding: 4px;
   margin-top: 3.5em;
-  width: 10%;
+  width: 120px;
   height: auto;
+}
+@media (max-width: 767px) {
+  .drpic, h5  {
+    text-align: center;
+  }
+
+
 }
 
 .doctors {
@@ -863,7 +880,7 @@ blockquote p {
 .provider-info {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin: 2.5em 0;
 }
@@ -893,12 +910,13 @@ blockquote p {
 .financing {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding-top: 6em;
 }
 
 .carecredit-coverage {
+  flex-basis: 50%;
   padding-right: 4em;
   text-align: left;
 }
@@ -910,8 +928,33 @@ blockquote p {
 }
 
 .carecredit-video {
+  flex-basis: 50%;
   padding-top: 5em;
+}
 
+@media (max-width: 1199px) {
+  .carecredit-coverage {
+    flex-basis: 100%;
+    padding-right: 0;
+  }
+  .carecredit-video {
+    flex-basis: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .insurancePg.content.provider-logo img {
+    padding: 20px 0;
+  }
+}
+@media (max-width: 596px) {
+  .carecredit-video {
+    padding-top: 1em;
+  }
+  .carecredit-video video {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
 }
 
 
