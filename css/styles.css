@@ -731,7 +731,7 @@ blockquote p {
    ** DATE: 04/23/2018 **
    ** REASONING ** */
 
-.contactPg {
+.contact-flex {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
@@ -740,15 +740,25 @@ blockquote p {
 }
 
 .get-in-touch {
-  flex-basis: 80%;
-  /*float: left;*/
+  flex-basis: 60%;
 }
 
 .office-hours {
-  flex-basis: 20%;
-  padding-left: 20px;
-  /*float: right;*/
-  margin-top: -22px;
+  flex-basis: 40%;
+}
+.office-hours table {
+  margin: 0 auto;
+}
+@media (max-width: 995px) {
+  .get-in-touch {
+    flex-basis: 100%;
+    align-self: center;
+  }
+  .office-hours {
+    flex-basis: 100%;
+    align-self: flex-end;
+    padding-top: 100px;
+  }
 }
 
 .office-hours h4{
