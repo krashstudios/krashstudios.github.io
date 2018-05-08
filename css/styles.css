@@ -316,6 +316,10 @@ nav ul {
 .info-box.website {
   flex-basis: 175px;
 }
+/* FINAL PROJECT REQUIRMENT * Media Query * Above is the desktop styling and below is the tablet and phone styles * Use of Flexbox makes responsiveness a lot easier * ** there are more below with more stylings **
+     Added 05/01/2018
+*/
+
 /* Tablet Media Queiry */
 @media (max-width: 768px) {
   .info-box.address {
