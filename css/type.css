@@ -1,162 +1,169 @@
-@charset "UTF-8";
 
+/* Font themes
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700');
-/*  Use the following CSS rules to specify these families:
-    font-family: 'Montserrat', verdana, sans-serif;
+/*
+Use the following CSS rules to specify these families:
+font-family: 'Montserrat', verdana, sans-serif;
 */
 
-@import url("ionicons.css");
+/*
+Ionicons: The premium icon pack for Ionic Framework
+Website ...... http://ionicons.com/
+*/
+@import url("ionicons.min.css");
 
-/* Setup */
-html {
-  /* Change default typefaces here */
-  font-family: 'Montserrat', verdana, sans-serif;
-  font-size: 108%;
-  -webkit-font-smoothing: antialiased;
-}
+/* Defaults
+   ========================================================================== */
 
 body {
-  word-wrap: break-word;
-}
-/* Copy & Lists */
-p {
-  color: #666;
-  color: rgb(102, 102, 102);
-  line-height: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0;
-}
-
-p + p {
-  text-indent: 1.5rem;
-  margin-top: 1rem;
-}
-
-small {
-  font-size: 80%;
-}
-
-strong {
-  color: #333;
-  color : rgb(51, 51, 51);
-}
-/*
-a {
-  color: #3DC5DF;
-  color: rgb(61, 197, 223);
-}
-*/
-ul,
-ol {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-ul li,
-ol li {
-  line-height: 1.5rem;
-}
-ul ul,
-ol ul,
-ul ol,
-ol ol {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-blockquote {
-  line-height: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* Change heading typefaces here */
+  font-size: 16px;
+  font-size: 100%;
   font-family: 'Montserrat', verdana, sans-serif;
-  font-weight: 700;
-  text-rendering: optimizeLegibility;
-  margin-top: 1.5rem;
-  margin-bottom: 0;
-  line-height: 1.5rem;
-  color: #333;
-  color: rgb(51, 51, 51);
+  color: #222;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
+@media screen and (min-width: 40em) {
+  body {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+
+
+/* Headings
+   ========================================================================== */
 h1 {
-  font-size: 4.0625rem;
-  line-height: 4.5rem;
-  margin-top: 3rem;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 52px;
+  line-height: 3.25rem;
+  /*margin-top: 104px;*/
+  /*margin-top: 6.5rem;*/
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
 }
+
 h2 {
-  font-size: 2.8125rem;
-  line-height: 3rem;
-  margin-top: 3rem;
+  font-size: 27px;
+  font-size: 1.6875rem;
+  line-height: 39px;
+  line-height: 2.4375rem;
+  /*margin-top: 65px;*/
+  /*margin-top: 4.0625rem;*/
+  margin-bottom: 13px;
+  margin-bottom: 0.8125rem;
 }
+
 h3 {
-  font-size: 2.125rem;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  /*margin-top: 52px;*/
+  /*margin-top: 3.25rem;*/
+  margin-bottom: 13px;
+  margin-bottom: 0.8125rem;
 }
+
 h4 {
-  font-size: 1.5rem;
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  /*margin-top: 39px;*/
+  /*margin-top: 2.4375rem;*/
+  margin-bottom: 13px;
+  margin-bottom: 0.8125rem;
 }
+
 h5 {
-  font-size: 1.125rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  /*margin-top: 65px;*/
+  /*margin-top: 4.0625rem;*/
+  margin-bottom: 13px;
+  margin-bottom: 0.8125rem;
 }
+
 h6 {
-  font-size: 0.875rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  /*margin-top: 65px;*/
+  /*margin-top: 4.0625rem;*/
+  margin-bottom: 13px;
+  margin-bottom: 0.8125rem;
 }
 
-/* Tables */
-table {
-  color: rgb(117,117,117);
-  margin-top: 1.5rem;
-  border-spacing: 0px;
-  border-collapse: collapse;
-}
-table td,
-table th {
-  padding: 5px;
-  line-height: 33px;
-}
+@media screen and (min-width: 40em) {
+  h1 {
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 62px;
+    line-height: 3.444444444444445rem;
+    /*margin-top: 124px;*/
+    /*margin-top: 6.888888888888889rem;*/
+    margin-bottom: 31px;
+    margin-bottom: 1.722222222222222rem;
+  }
 
-table caption {
-  text-align: left;
-}
+  h2 {
+    font-size: 27px;
+    font-size: 1.6875rem;
+    line-height: 46.5px;
+    line-height: 2.583333333333334rem;
+    /*margin-top: 77.5px;*/
+    /*margin-top: 4.305555555555556rem;*/
+    margin-bottom: 15.5px;
+    margin-bottom: 0.861111111111111rem;
+  }
 
-legend {
-  color: rgb(51,51,51);
-  padding-bottom: 1rem;
-}
-/* FINAL PROJECT REQUIRMENT * Address *
-   Added 04/27/2018
-   - Styling falls in line with rest of site
-*/
-address {
-  color: #666;
-  color: rgb(102, 102, 102);
-  line-height: 1.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-}
+  h3 {
+    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 31px;
+    line-height: 1.722222222222222rem;
+    /*margin-top: 62px;*/
+    /*margin-top: 3.444444444444445rem;*/
+    margin-bottom: 15.5px;
+    margin-bottom: 0.861111111111111rem;
+  }
 
-/* Code blocks */
-code {
-  vertical-align: bottom;
-}
+  h4 {
+    font-size: 19.2px;
+    font-size: 1.2rem;
+    line-height: 31px;
+    line-height: 1.722222222222222rem;
+    /*margin-top: 46.5px;*/
+    /*margin-top: 2.583333333333334rem;*/
+    margin-bottom: 15.5px;
+    margin-bottom: 0.861111111111111rem;
+  }
 
-/* Leading paragraph text */
-.lead {
-  font-size: 1.414rem;
-}
-/* Hug the block above you */
-.hug {
-  margin-top: 0;
-}
+  h5 {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 31px;
+    line-height: 1.722222222222222rem;
+    /*margin-top: 77.5px;*/
+    /*margin-top: 4.305555555555556rem;*/
+    margin-bottom: 15.5px;
+    margin-bottom: 0.861111111111111rem;
+  }
 
-/* Lighter font weight */
-.light {
-  font-weight: 300;
+  h6 {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 31px;
+    line-height: 1.722222222222222rem;
+    /*margin-top: 77.5px;*/
+    /*margin-top: 4.305555555555556rem;*/
+    margin-bottom: 15.5px;
+    margin-bottom: 0.861111111111111rem;
+  }
 }

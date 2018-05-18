@@ -1,0 +1,189 @@
+/* Media Query Breaking Points (600px - Tablet), (900px - Tablet Portrait), (1200px, 1800px - Desktop) */
+
+
+/* .grid {
+  display: grid;
+  grid-template-columns: ;
+  grid-template-rows: ;
+  grid-gap: ;
+} */
+
+/*
+Grid Items
+*/
+/*
+.header {}
+
+.main {}
+
+.footer {} */
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+
+/* Main Footer Grid
+   ========================================================================== */
+.footer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas:
+    "contact-info"
+    "footer-content"
+    "copyright"
+  ;
+}
+
+
+
+/* Footer Contact Info Area/Grid
+   ========================================================================== */
+.contact-info {
+  grid-area: contact-info;
+}
+
+/*
+Tablet Media Queries
+*/
+@media screen and (min-width: 600px) {
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+    "address phone"
+    "email website"
+    ;
+  }
+  #address {
+    grid-area: address;
+  }
+  #phone {
+    grid-area: phone;
+  }
+  #email {
+    grid-area: email;
+  }
+  #website {
+    grid-area: website;
+  }
+}
+
+/*
+Tablet Portrait Media Queries
+*/
+@media screen and (min-width: 900px) {
+  .contact-info {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "address phone email website"
+    ;
+  }
+}
+
+/*
+Desktop Media Queries
+*/
+@media screen and (min-width: 1200px) {
+  .contact-info {
+    grid-template-columns: minmax(20px, auto) repeat(4, 290px) minmax(20px, auto);
+    grid-template-areas:
+      ". address phone email website ."
+    ;
+  }
+}
+
+
+/* Footer Content Grid
+   ========================================================================== */
+.footer-content {
+display: grid;
+grid-area: footer-content;
+grid-template-areas:
+    "footer-right"
+    "footer-left"
+    "footer-center"
+  ;
+}
+
+/*
+Desktop Media Query - .footer-content
+1. Sets Gutters as responsive and Grid Areas as fixed widths
+2. Desktop Layout of .footer-content Grid Areas
+*/
+@media screen and (min-width: 1200px) {
+  .footer-content {
+    grid-template-columns: minmax(20px, auto) 300px 560px 300px minmax(20px, auto); /* 1 */
+    grid-template-areas: /* 2 */
+      ". footer-left footer-center footer-right ."
+    ;
+  }
+}
+
+  /* .footer-content Grid Areas */
+
+/* Footer Left Area
+   ========================================================================== */
+  .footer-left {
+    grid-area: footer-left;
+  }
+
+/* Footer Center Area
+   ========================================================================== */
+  .footer-center {
+    grid-area: footer-center;
+  }
+
+/* Footer Right Area
+   ========================================================================== */
+  .footer-right {
+    grid-area: footer-right;
+  }
+
+   /*
+   Tablet Media Queries
+   */
+   @media screen and (min-width: 747px) {
+     .footer-right {
+       display: grid;
+       grid-template-columns: minmax(auto, 13%) 1fr 1fr minmax(auto, 13%);
+       grid-template-areas:
+         ". guide hours ."
+       ;
+     }
+     .patient-guide {
+       grid-area: guide;
+     }
+     .office-hours {
+       grid-area: hours;
+     }
+   }
+
+   /*
+   Tablet Portrait Media Query - Footer Right
+   */
+   @media screen and (min-width: 900px) {
+     .footer-right {
+       grid-template-columns: minmax(auto, 20%) 1fr 1fr minmax(auto, 20%);
+     }
+   }
+
+   /*
+   Desktop Media Queries
+   */
+   @media screen and (min-width: 1200px) {
+     .footer-right {
+       grid-template-columns: repeat(1, 1fr);
+       grid-template-areas:
+         "guide"
+         "hours"
+       ;
+     }
+   }
+
+
+
+/* Footer Copyright Grid
+   ========================================================================== */
+.rights {
+  grid-area: copyright;
+}

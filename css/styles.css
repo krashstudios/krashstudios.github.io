@@ -1,1051 +1,462 @@
-/* Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`. */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
-/* ==========================================================================
-   HTML and Body styles
-   ========================================================================== */
-html, body {
-  margin: 0;
-}
-
-body {
-  width: 100%;
-  height: 100%;
-}
-
-.clearfix {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
-/* Spacer Needed for Fixed Header */
-#spacer {
-  width: auto;
-  height: 64px;
-}
-
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-
-
-/* ==========================================================================
-   Header
-   ========================================================================== */
-
-.header {
-  background-color: white;
-  box-shadow: 0 3px 3px rgba(0,0,0,0.1);
-  width: 100%;
-  z-index: 999;
-}
-
-.header .logo {
-  display: block;
-  float: left;
-  font-size: 2em;
-  padding: 8px 30px;
-  text-decoration: none;
-}
-
-
-
-/* ==========================================================================
-   Navigation
-   ========================================================================== */
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
-  background-color: white;
-}
-
-nav a {
-  color: #696969;
-  color: rgb(105,105,105);
-  font-weight: 500;
-  transition: all 0.3s linear;
-}
-
-nav ul li a {
-  display: block;
-  padding: 20px 20px;
-  text-decoration: none;
-}
-
-nav ul li a:hover,
-.header .menu-btn:hover {
-  color: rgb(61,197,223);
-}
-
-/* Submenu Dropdown */
-/* Hide Dropdown for Mobile Nav */
-nav ul ul {
-  display: none;
-}
-
-/* Display Dropdown on Hover */
-nav ul li:hover > ul {
-  display: inherit;
-}
-
-/* Indents Submenu List Items */
-nav ul li ul a {
-  padding: 14px 0;
-  text-indent: 40px;
-}
-
-nav ul li ul a:hover {
-  color: white;
-  background-color: rgb(61,197,223);
-}
-
-/* Highlight Active Navigation Link  */
-.active {
-  color: rgb(61,197,223)
-}
-
-/* menu */
-
-nav ul {
-  clear: both;
-  max-height: 0;
-  transition: max-height .2s ease-out;
-}
-
-/* menu icon, the Hamberger!  */
-
-.header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  float: right;
-  padding: 28px 20px;
-  position: relative;
-  user-select: none;
-}
-
-.header .menu-icon .navicon {
-  background: #333;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background .2s ease-out;
-  width: 18px;
-}
-
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-  background: #333;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-}
-
-.header .menu-icon .navicon:before {
-  top: 5px;
-}
-
-.header .menu-icon .navicon:after {
-  top: -5px;
-}
-
-.header .menu-btn {
-  display: none;
-}
-
-/* Max Height of Mobile Dropdown */
-.header .menu-btn:checked ~ nav ul {
-  max-height: 480px;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
-
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
-}
-
-/* header Media Queries */
-
-
-@media (min-width: 768px) {
-  nav li {
-    float: left;
-  }
-  nav ul li a {
-    padding: 20px 25px;
-  }
-  nav ul {
-    clear: none;
-    float: right;
-    max-height: none;
-  }
-
-  /* Dropdown Menu */
-
-  /* Hide Dropdowns by Default
-   * and giving it a position of absolute */
-  .dropdown {
-    display: none;
-    position: absolute;
-  }
-
-  /* Display Dropdowns on Hover */
-  nav ul li:hover > ul.dropdown {
-    display: inherit;
-  }
-
-  /* Change Padding for Dropdown */
-  nav ul ul li a {
-    padding: 10px 20px;
-    text-indent: 0;
-  }
-
-  /* Dropdown "a link" hover style */
-  nav ul ul li a:hover {
-    color: white;
-    background-color: rgb(61,197,223);
-  }
-
-  /* Dropdown First Tier */
-  nav ul ul li {
-    min-width: 250px;
-    float: none;
-    display: list-item;
-  }
-
-  /* Hides Mobile Dropdown Button */
-  .header .menu-icon {
-    display: none;
-  }
-}
-
-
-/* ==========================================================================
+/* =============================================================================
    Footer
+   ========================================================================== */
+footer {
+  background-color: rgb(33,33,33);
+}
+
+
+
+/* Contact Info
    ========================================================================== */
 .contact-info {
   background-color: rgb(247,247,247);
   text-align: center;
-  }
-.contact-info .container {
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: baseline;
 }
 
 .info-box {
-  margin: 45px 0;
+  padding: 20px 15px;
 }
-.info-box p {
-  margin-top: 5px;
+.info-box#address {
+  padding-top: 50px;
 }
-.info-box h5 {
-  margin-top: 0.5rem;
-  font-weight: 600;
+.info-box#website {
+  padding-bottom: 50px;
 }
-/* children of contact-info */
-.info-box.address {
-  flex-basis: 175px;
-}
-.info-box.phone {
-  flex-basis: 175px;
-}
-.info-box.email {
-  flex-basis: 175px;
-}
-.info-box.website {
-  flex-basis: 175px;
-}
-/* FINAL PROJECT REQUIRMENT * Media Query * Above is the desktop styling and below is the tablet and phone styles * Use of Flexbox makes responsiveness a lot easier * ** there are more below with more stylings **
-     Added 05/01/2018
+
+/*
+Tablet Media Query - .info-box
+1. Add padding to top
 */
-
-/* Tablet Media Queiry */
-@media (max-width: 768px) {
-  .info-box.address {
-    flex-basis: 40%;
-  }
-  .info-box.phone {
-    flex-basis: 40%;
-  }
-  .info-box.email {
-    flex-basis: 40%;
-  }
-  .info-box.website {
-    flex-basis: 40%;
+@media screen and (min-width: 600px) {
+  .info-box#phone {
+    padding-top: 50px;
   }
 }
-/* Phone Media Queiry */
-@media (max-width: 415px) {
-  .info-box.address {
-    flex-basis: 60%;
+/*
+Tablet Portrait Media Queries - .info-box
+1. Change padding of .info-box items
+*/
+@media screen and (min-width: 900px) {
+  .info-box#address {
+    padding: 20px 0;
   }
-  .info-box.phone {
-    flex-basis: 60%;
+  .info-box#phone {
+    padding: 20px 0;
   }
-  .info-box.email {
-    flex-basis: 60%;
+  .info-box#email {
+    padding: 20px 0;
   }
-  .info-box.website {
-    flex-basis: 60%;
+  .info-box#website {
+    padding: 20px 0;
   }
 }
 
 
-footer {
+/* Ionicon Font Size */
+.ion-ios-location-outline {
+  font-size: 2rem;
+}
+.ion-iphone {
+  font-size: 2rem;
+}
+.ion-ios-email-outline {
+  font-size: 2rem;
+}
+.ion-android-globe {
+  font-size: 2rem;
+}
+
+.contact-info a {
+  color: rgb(34,34,34);
+  text-decoration: none;
+}
+.contact-info a:hover {
+  color: rgb(0,86,179);
+}
+
+
+/* Footer Left Side
+   ========================================================================== */
+
+.footer-left {
   background-color: rgb(33,33,33);
-  width: 100%;
-  z-index: 999;
+  padding: 20px 55px;
+}
+/*
+Tablet Media Query - Footer Left
+*/
+@media screen and (min-width: 600px) {
+  .footer-left {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
 }
 
-footer p {
+/*
+Tablet Portrait Media Query - Footer Left
+*/
+@media screen and (min-width: 900px) {
+  .footer-left {
+    padding-left: 23%;
+    padding-right: 23%;
+  }
+}
+
+/*
+Desktop Media Query - Footer Left
+1. Increase padding-top
+*/
+@media screen and (min-width: 1200px) {
+  .footer-left {
+    padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.footer-left p {
   color: rgb(117,117,117);
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: 300;
+  margin-bottom: 5px;
+  font-size: 1rem;
 }
-
-.h5-footer {
+.footer-left h5 {
   color: white;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-weight: 500;
+  text-align: center;
   text-transform: uppercase;
 }
+/*
+Desktop Media Query - Footer Left h5
+1. Align h5 text to left side
+*/
+@media screen and (min-width: 1200px) {
+  .footer-left h5 {
+    text-align: left;
+  }
+}
+.footer-left ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+.footer-left li {
+  padding: 15px 0;
+}
+.footer-left a {
+  color: white;
+  text-decoration: none;
+}
+.footer-left a:hover {
+  color: rgb(0,86,179);
+  transition: all 0.3s ease-in-out;
+}
 
-footer #btm-logo {
+.twitter-name {
+  color: rgb(61,197,223);
+}
+.tweet-date {
+  color: rgb(117,117,117);
+  float: right;
+  display: inline-block;
+}
+
+/* Footer Center
+   ========================================================================== */
+.footer-center {
+  background-color: rgb(33,33,33);
+  padding: 50px 55px;
+  text-align: center;
+}
+/*
+Tablet Media Query - Footer Center
+*/
+@media screen and (min-width: 600px) {
+  .footer-center {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+/*
+Tablet Portrait Media Query - Footer Center
+*/
+@media screen and (min-width: 900px) {
+  .footer-center {
+    padding-left: 24%;
+    padding-right: 24%;
+  }
+}
+
+
+/*
+Desktop Media Query - Footer center
+1. Adds border to left and righ sides
+*/
+@media screen and (min-width: 1200px) {
+  .footer-center {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top: none;
+    border-bottom: none;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+}
+.footer-center p {
+  color: rgb(117,117,117);
+  font-size: 1rem;
+}
+.footer-center h5 {
+  color: white;
+  text-transform: uppercase;
+}
+.footer-center ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+#footer-logo {
   margin-bottom: 30px;
   display: inline-block !important;
   vertical-align: middle;
 }
 
-footer .small-info {
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.1);
-  /*max-width: 480px;*/
-  padding: 50px 55px;
-  border-bottom: none;
-  border-top: none;
+/*
+Social Icon Fonts
+*/
+ul.social-icons {
+  text-decoration: none;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  display: inline-block;
+  list-style-type: none;
+  border-bottom: 1px dashed rgba(255,255,255,0.4);
+}
+.social-icons li {
+  display: inline-block;
+  padding: 0 8px;
+}
+.fa-circle {
+  color: rgb(21,21,21);
+  font-size: 2rem;
 }
 
-footer .newsletter input {
-  display: inline-block;
+/* facebook icon */
+.fa-facebook-f {
+  color: rgb(117,117,117);
+  font-size: 0.7rem;
+}
+.fa-facebook-f:hover {
+  color: white;
+}
+.fa-facebook-f:hover {
+  background-color: rgb(59,89,152);
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* twitter icon */
+.fa-twitter {
+  color: rgb(117,117,117);
+  font-size: 0.7rem;
+}
+.fa-twitter:hover {
+  color: white;
+}
+.fa-twitter:hover {
+  background-color: rgb(0,172,237);
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* linkedin icon */
+.fa-linkedin-in {
+  color: rgb(117,117,117);
+  font-size: 0.7rem;
+}
+.fa-linkedin-in:hover {
+  color: white;
+}
+.fa-linkedin-in:hover {
+  background-color: rgb(0,119,181);
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Newsletter Registration */
+.newsletter input {
+  color: rgb(117,117,117);
   height: 40px;
   padding: 0 10px;
-  float: left;
-  width: 70%;
+  margin-bottom: 20px;
+  width: 100%;
   background-color: rgba(255,255,255,0.05);
   border: 2px solid rgba(255,255,255,0.1);
-  border-right: none;
+}
+.newsletter .btn-3 {
+  width: 67%;
+  margin-left: 16.5%;
+  margin-right: 16.5%;
 }
 
-/* Left Side of Footer */
-.footer-left {
-  /*max-width: 20%;*/
-  margin-right: 10px;
-  padding-top: 60px;
-  text-align: left;
+/* Tablet Media Query - .newsletter
+1. Places input and button inline
+*/
+@media screen and (min-width: 600px) {
+  .newsletter input{
+    width: 70%; /* 1 */
+    border-right: none;
+  }
+  .newsletter .btn-3 {
+    width: 30%; /* 1 */
+    margin: 0;
+  }
 }
 
-.footer-left span {
-  color: rgb(61,197,223);
+/* Footer Right
+   ========================================================================== */
+.footer-right {
+  background-color: rgb(33,33,33);
+  text-align: center;
 }
-
-.footer-left ul {
-  list-style-type: none;
-  padding-left: 0;
+/*
+Desktop Media Query - Footer Right
+1. Align text to the right side
+*/
+@media screen and (min-width: 1200px) {
+  .footer-right {
+    text-align: right; /* 1 */
+  }
 }
-
-.footer-left p {
-  font-size: 0.8rem;
-}
-.footer-left .tweet-date {
+.footer-right p {
   color: rgb(117,117,117);
-  font-size: 0.6rem;
-  float: right;
-  display: inline-block;
+  font-size: 1rem;
 }
-
-.footer-left li {
-  margin-bottom: 1.5em;
-}
-
-.footer-left a {
+.footer-right h5 {
   color: white;
-  text-decoration: none;
+  text-transform: uppercase;
 }
 
-.footer-left a:hover {
-  color: rgb(35, 82, 124);
+/* patient guide */
+.patient-guide {
+  padding: 20px 15px;
+  padding-top: 50px;
+}
+
+/*
+Tablet Media Query - .patient-guide {
+1. Changes .patient-guide to right side when at 740px
+}
+*/
+@media screen and (min-width: 747px) {
+  .patient-guide {
+    text-align: left;
+  }
+}
+/*
+Tablet Portrait Media Query - .patient-guide
+1. Takes away padding-right to prevent word wrap
+*/
+@media screen and (min-width: 900px) {
+  .patient-guide {
+    padding-right: 0;
+  }
+}
+
+/* Desktop Media Query - Patient guide
+1. Decrease Padding on bottom
+*/
+@media screen and (min-width: 1200px) {
+  .patient-guide {
+    padding-right: 15px;
+    padding-bottom: 0;
+    text-align: right;
+  }
+}
+
+
+.patient-guide ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+.patient-guide a {
+  color: rgb(117,117,117);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.patient-guide a:hover {
+  color: white;
   transition: all 0.3s ease-in-out;
 }
-
-.footer-left a:active {
+.patient-guide li:active {
   border: 1px dashed rgba(255,255,255,0.4);
+  width: 100%;
 }
 
-/* Right Side of Footer */
-.footer-right {
-  /*max-width: 22%;*/
-  padding-top: 60px;
-  text-align: right;
+/* Office Hours */
+.office-hours {
+  padding: 20px 15px;
 }
-
-.footer-right ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-.footer-right ul li a {
-  color: rgb(117,117,117);
-  font-size: 0.9rem;
-  font-weight: 300;
-  text-decoration: none;
-}
-.footer-right a:hover {
-  color: white;
-}
-.footer-right a:active {
-  border: 1px dashed rgba(255,255,255,0.4);
-}
-
-.footer-right h5 {
-  margin-bottom: 1.5rem;
-}
-
-.footer-right .open-hours p span {
+.office-hours span {
   margin-left: 10px;
 }
 
-.footer-flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+/*
+Tablet Media Query - .office-hours {
+1. Changes .office-hours to right side when at 740px
 }
-/* Children of .footer-flex */
-.footer-left {
-  flex-basis: 23%;
-}
-.footer-middle {
-  flex-basis: 50%;
-}
-.footer-right {
-  flex-basis: 23%;
-}
-@media (max-width: 1199px) {
-  .footer-left {
-    order: 1;
-    flex-basis: 40%;
-  }
-  .footer-middle {
-    order: 3;
-    flex-basis: 100%;
-    margin-top: 45px;
-  }
-  .footer-right {
-    order: 2;
-    flex-basis: 40%;
-  }
-  footer .small-info {
-    border: none;
+*/
+@media screen and (min-width: 747px) {
+  .office-hours {
+    padding-top: 50px;
+    text-align: right;
   }
 }
-@media (max-width: 767px) {
-  footer .newsletter input {
-    width: 65%
-  }
-  footer .newsletter .btn-3 {
-    width: 35%;
+/*
+Tablet Portrait Media Query - .office-hours
+1. Takes away padding-left to prevent word wrap
+*/
+@media screen and (min-width: 900px) {
+  .office-hours {
+    padding-left: 0;
   }
 }
 
-@media (max-width: 576px) {
-  .footer-left {
-    order: 2;
-    flex-basis: 100%;
-  }
-  .footer-middle {
-    order: 3;
-    flex-basis: 100%;
-  }
-  .footer-right {
-    order: 1;
-    flex-basis: 100%;
-    text-align: center;
-  }
-}
-@media (max-width: 510px) {
-  footer .newsletter input {
-    width: 100%;
-    border-right: 2px solid rgba(255,255,255,0.1);
-  }
-  footer .newsletter .btn-3 {
-    float: left;
-    width: 67%;
-    margin-left: 16.5%;
-    margin-right: 16.5%;
+/*
+Desktop Media Query - Office Hours
+1. Remove 50px padding-top
+*/
+@media screen and (min-width: 1200px) {
+  .office-hours {
+    padding-top: 0;
+    padding-left: 15px
   }
 }
 
 
+/* Copyright
+   ========================================================================== */
 .rights {
   background-color: rgb(27,27,27);
-  text-align: center;
-  width: 100%;
   padding: 20px 0;
+  text-align: center;
+}
+.rights p {
+  margin: 0;
   color: rgb(117,117,117);
-  font-family: sans-serif;
-  font-size: 14px;
-}
-
-
-/* ==========================================================================
-   Sections
-   ========================================================================== */
-/* ------ Home Page ------ */
-/* Pushes Content below Header */
-main.homePg {
-  padding-top: 0;
-}
-
-.header#home-header {
-  top: 0;
-}
-
-#home-hero {
-  background-image: url(../img/home-hero-01.jpg);
-}
-.hero#home-hero {
-  height: 25em;
-}
-#hero-heading h3 {
-  background-color: rgba(67,166,216,0.7);
-  color: white;
-  padding: 15px;
-  height: auto;
-  width: 25%;
-  display: block;
-  position: absolute;
-  top: 320px;
-}
-
-/* infinite brand scroll marquee */
-.brand-loop {
-    height: 250px;
-    width: 5896px;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-.brand-loop img {
-    padding: 30px;
-    transition: all 0.5s ease;
-}
-.brand-loop img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-/* keyframe animations */
-.first-loop-img {
-  animation: bannermove 40s linear infinite;
-}
-@keyframes bannermove {
- 0% {
-    margin-left: 0px;
- }
- 100% {
-    margin-left: -5974px;
- }
-}
-.brand-marquee::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  display: block;
-
-  height: 560px;
-  width: 100%;
-
-  background-image: url(../img/background-walnut-wood.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-clip: border-box;
-  filter: grayscale(60%);
-}
-.brand-marquee {
-  position: relative;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-.brand-marquee p {
-  padding-bottom: 2em;
-}
-
-/* testimonials */
-.testimonials::before {
-  content: '';
-  position: relative;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  display: block;
-
-  height: 468px;
-  width: 100%;
-
-  background-image: url(../img/people-grid.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  filter: grayscale(80%);
-}
-.testimonials {
-  position: relative;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  text-align: center;
-}
-.testimonial-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(67,166,216,0.7);
-}
-
-.testimonial-image {
-  border: 3px solid rgba(255,255,255,0.6);
-  border-radius: 50%;
-  padding: 4px;
-  margin-top: 2em;
-  width: 125px;
-  height: auto;
-  filter: grayscale(60%);
-}
-
-.testimonials .content {
-  padding: 40px 0;
-}
-.testimonials p {
-  color: white;
-}
-@media (max-width: 443px) {
-  .testimonial-image {
-    margin-top: 0;
-  }
-  .testimonials p {
-    font-size: .8rem
-  }
-
-}
-
-blockquote {
-  margin: 1.5em 10px;
-  padding: 0.4em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-}
-blockquote:before {
-  color: white;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
-}
-
-
-
-/* ------ Contact Page ------ */
-
-/* ** FINAL PROJECT REQUIMENT **
-   ** Form (using at a minimum: maxlength, input boxes, placeholder, required, field set, legend, field labels, 2 different data types, submit and reset buttons, pattern). This is 12 requirements when looking at the commenting requirement (below). - Tutorial 7 **
-   ** DATE: 04/23/2018 **
-   ** REASONING ** */
-
-.contact-flex {
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.get-in-touch {
-  flex-basis: 60%;
-}
-
-.office-hours {
-  flex-basis: 40%;
-}
-.office-hours table {
-  margin: 0 auto;
-}
-@media (max-width: 995px) {
-  .get-in-touch {
-    flex-basis: 100%;
-    align-self: center;
-  }
-  .office-hours {
-    flex-basis: 100%;
-    align-self: flex-end;
-    padding-top: 100px;
-  }
-}
-
-.office-hours h4{
-  margin-top: 0;
-}
-
-.googlemap {
-  position: relative;
-  padding-bottom: 25%;
-  height: 0;
-  overflow: hidden;
-}
-
-.googlemap iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  border: none;
-}
-
-/* ** FINAL PROJECT REQUIMENT **
-   ** Background within the site. It can be an image or a color. If it’s an image, it can’t be one of the 5 minimum noted above. - Tutorial 4**
-   ** DATE: 04/23/2018 **
-   ** Using a background image so that it can later be overlayed with a transparent background color ** */
-#contact-hero {
-  background-image: url(../img/contact-hero.jpg);
-}
-
-#time-table caption {
-  margin-bottom: 25px;
-}
-
-#time-table td:first-child {
-  padding-right: 50px;
-}
-
-#buttons #submit-btn {
-  margin-right: 30px;
-}
-
-
-
-/* ------ Our Practice Page ------ */
-
-.ourpractice#hero::before {
-  content: '';
-  position: relative;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  display: block;
-
-  width: 100%;
-  height: 500px;
-
-  background-image: url(../img/our-practice.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  filter: grayscale(80%);
-}
-.ourpractice#hero {
-  position: relative;
-  left: 0;
-  right: 0;
-  z-index: 0;
-}
-.practice-overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(67,166,216,0.7);
-}
-.practice-overlay .container {
-  padding: 7% 0;
-  text-align: center;
-}
-.practice-overlay .container h2 {
-  color: white;
-}
-.practice-overlay .container p {
-  color: white;
-}
-.ourPracticePg.content {
-  padding-top: 0;
-}
-
-
-.drpic img {
-  border: 3px solid rgb(105,105,105);
-  border-radius: 50%;
-  padding: 4px;
-  margin-top: 3.5em;
-  width: 120px;
-  height: auto;
-}
-@media (max-width: 767px) {
-  .drpic, h5  {
-    text-align: center;
-  }
-
-
-}
-
-.doctors {
-  margin-top: 5em;
-}
-
-
-
-/* ------ Insurance Page ------ */
-.insurancePg.content {
-  width: 100%;
-}
-.insurancePg.content.top {
-  padding-top: 0;
-}
-.insurancePg.content.provider-logo {
-  width: 100%;
-  margin: 0 auto;
-  padding: 2em 0;
-  text-align: center;
-}
-.insurancePg.content.provider-logo img {
-  padding: 0 2em;
-}
-
-.provider-info {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 2.5em 0;
-}
-.provider-info ul {
-  list-style-type: circle;
-}
-.provider-info a {
-  color: rgb(105,105,105);
-  text-decoration: none;
-}
-.provider-info a:hover {
-  color: rgb(61,197,223);
-}
-
-.insurancePg.content.help {
-  padding-top: 1em;
-  padding-bottom: 2.5em;
-}
-
-.insurancePg.content.carecredit {
-  text-align: center;
-}
-.carecredit-apply h5 {
-  padding-bottom: 1.5em;
-}
-
-.financing {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding-top: 6em;
-}
-
-.carecredit-coverage {
-  flex-basis: 50%;
-  padding-right: 4em;
-  text-align: left;
-}
-.carecredit-coverage ul {
-  list-style-type: circle;
-}
-.carecredit-coverage h4 {
-  text-align: left;
-}
-
-.carecredit-video {
-  flex-basis: 50%;
-  padding-top: 5em;
-}
-
-@media (max-width: 1199px) {
-  .carecredit-coverage {
-    flex-basis: 100%;
-    padding-right: 0;
-  }
-  .carecredit-video {
-    flex-basis: 100%;
-  }
-}
-@media (max-width: 991px) {
-  .insurancePg.content.provider-logo img {
-    padding: 20px 0;
-  }
-}
-@media (max-width: 596px) {
-  .carecredit-video {
-    padding-top: 1em;
-  }
-  .carecredit-video video {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
+  font-size: .7rem;
+}
+/*
+Desktop Media Query - .right p
+1. Changes font size of copyright
+*/
+@media screen and (min-width: 1200px) {
+  .rights p {
+    font-size: 0.8rem;
   }
 }
 
 
-.insuranceVS h2, h4 {
-  text-align: center;
-}
-.insurance-help h4 {
-  color: white;
-  text-align: center;
-}
-
-
-
-
-/* ==========================================================================
-   Classes & IDs
-   ========================================================================== */
-
-.responsive {
-  width: 100%;
-  height: auto;
-}
-
-.content {
-  display: inline-block;
-  padding: 100px 0;
-}
-
-.center {
-  text-align: center;
-}
-
-.background-grey {
-  background-color: rgb(247,247,247);
-}
-.background-blue {
-  background-color: rgba(67,166,216,0.7);
-}
-
-.blue {
-  color: rgb(61,197,223);
-}
-.white {
-  color: white;
-}
-
-.hero {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-origin: padding-box;
-  background-clip: border-box;
-  height: 18em;
-}
-
-.hero-overlay {
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 120px 0;
-  text-align: center;
-}
-
-.hero-overlay h3 {
-  color: rgb(61,197,223);
-  text-transform: uppercase;
-}
-.hero-overlay p {
-  margin-top: 10px;
-  text-align: center;
-}
-
-
-/* ==========================================================================
-   Filters
-   ========================================================================== */
-.grayscale {
-  filter: grayscale(100%);
-}
 
 /* ==========================================================================
    Buttons
@@ -1064,12 +475,10 @@ blockquote p {
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
-
 .btn:hover {
   background-color: white;
   color: rgb(61,197,223);
 }
-
 .btn:active {
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
 }
@@ -1091,7 +500,6 @@ blockquote p {
   background-color: rgb(61,197,223);
   color: white;
 }
-
 .btn-2:active {
   border: 1px dotted white;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
@@ -1107,72 +515,4 @@ blockquote p {
   height: 40px;
   float: right;
   cursor: pointer;
-}
-
-
-/* ==========================================================================
-   Social Icons
-   ========================================================================== */
-
-ul.social-icons {
-  text-decoration: none;
-  text-align: center;
-  padding-left: 0;
-  padding-bottom: 20px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  width: 100%;
-  display: inline-block;
-  list-style-type: none;
-  border-bottom: 1px dashed rgba(255,255,255,0.4);
-}
-
-
-.social-icons li {
-  display: inline-block;
-  padding: 0 8px;
-}
-
-.fa-circle {
-  color: rgb(21,21,21);
-  font-size: 2rem;
-}
-
-.fa-facebook-f {
-  color: rgb(117,117,117);
-  font-size: 0.7rem;
-}
-.fa-facebook-f:hover {
-  color: white;
-}
-.fa-facebook-f:hover {
-  background-color: rgb(59,89,152);
-  border-radius: 50%;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.fa-twitter {
-  color: rgb(117,117,117);
-  font-size: 0.7rem;
-}
-.fa-twitter:hover {
-  color: white;
-}
-.fa-twitter:hover {
-  background-color: rgb(0,172,237);
-  border-radius: 50%;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.fa-linkedin-in {
-  color: rgb(117,117,117);
-  font-size: 0.7rem;
-}
-.fa-linkedin-in:hover {
-  color: white;
-}
-.fa-linkedin-in:hover {
-  background-color: rgb(0,119,181);
-  border-radius: 50%;
-  transition: background-color 0.3s ease-in-out;
 }
