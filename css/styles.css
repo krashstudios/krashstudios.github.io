@@ -39,7 +39,7 @@ nav a {
 nav ul li a {
   display: block;
   padding: 20px 20px;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 nav ul li a:hover,
@@ -147,6 +147,57 @@ nav ul {
   top: 0;
 }
 
+@media (min-width: 1200px) {
+  nav li {
+    float: left;
+  }
+  nav ul li a {
+    padding: 20px 25px;
+  }
+  nav ul {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  /* Dropdown Menu */
+
+  /* Hide Dropdowns by Default
+   * and giving it a position of absolute */
+  .dropdown {
+    display: none;
+    position: absolute;
+  }
+
+  /* Display Dropdowns on Hover */
+  nav ul li:hover > ul.dropdown {
+    display: inherit;
+  }
+
+  /* Change Padding for Dropdown */
+  nav ul ul li a {
+    padding: 10px 20px;
+    text-indent: 0;
+  }
+
+  /* Dropdown "a link" hover style */
+  nav ul ul li a:hover {
+    color: white;
+    background-color: rgb(61,197,223);
+  }
+
+  /* Dropdown First Tier */
+  nav ul ul li {
+    min-width: 250px;
+    float: none;
+    display: list-item;
+  }
+
+  /* Hides Mobile Dropdown Button */
+  .header .menu-icon {
+    display: none;
+  }
+}
 
 
 
