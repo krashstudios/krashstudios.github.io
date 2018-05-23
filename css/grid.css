@@ -248,6 +248,9 @@ Desktop Media Query - .footer-content
 
 /* Insurance Page
    ========================================================================== */
+/*
+Provider Logos
+*/
 .provider-logo {
   display: grid;
   grid-template-columns: minmax(20px, auto) 1fr minmax(20px, auto);
@@ -272,9 +275,12 @@ Desktop Media Query - .footer-content
   grid-area: em;
   justify-self: center;
 }
+/*
+Provider Logo Media Query - Sets Logos in-line
+*/
 @media screen and (min-width:768px) {
   .provider-logo {
-    grid-template-columns: minmax(20px, auto) 1fr 1fr 1fr minmax(20px, auto);
+    grid-template-columns: minmax(20px, auto) repeat(3, 1fr) minmax(20px, auto);
     grid-column-gap: 60px;
     grid-template-areas:
       ". vsp vcd em ."
@@ -285,6 +291,17 @@ Desktop Media Query - .footer-content
   }
   .em-logo {
     justify-self: start;
+  }
+}
+
+/*
+Desktop Media Query - Sets Financing section as 2 column grid
+*/
+@media screen and (min-width:1200px) {
+  .financing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 80px;
   }
 }
 

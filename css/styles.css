@@ -865,6 +865,13 @@ CareCredit
 /* CareCredit Video */
 .carecredit-video {
   padding-top: 30px;
+  text-align: center;
+}
+/* Desktop Media Query - CareCredit Video */
+@media screen and (min-width:1200px) {
+  .carecredit-video {
+    padding-top: 45px;
+  }
 }
 .carecredit-video video {
   width: 100%;
