@@ -750,27 +750,74 @@ Desktop Media Query - .right p
 
 /* Insurance Page
    ========================================================================== */
-.insuranceVS {
+/* insurance-vs */
+.insurance-vs {
   background-color: rgb(247,247,247);
   padding: 50px 0;
 }
-
-.insuranceVS h1, h3 {
+.insurance-vs h1, h3 {
   text-align: center;
 }
 
-.providerLogo {
+/* provider-logo */
+.provider-logo {
+  padding: 30px 0;
   text-align: center;
 }
-
-.providerLogo img {
+.provider-logo img {
   padding: 20px;
 }
 
-.providerLinks {}
-
-.providerLinks h2 {
+/* provider-links */
+.provider-links {
+  padding: 30px 0;
+}
+.provider-links ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+.provider-links a {
+  color: rgb(105,105,105);
+  text-decoration: none;
+}
+.provider-links a:hover {
+  color: rgb(61,197,223);
+}
+.provider-links h2, h4 {
   text-align: center;
+}
+/* vision plans */
+.vision-plans {
+  padding-top: 30px;
+}
+
+
+/* insurance help */
+.insurance-help {
+  background-color: rgba(67,166,216,0.7);
+  padding: 60px 50px 40px;
+}
+.insurance-help h3 {
+  color: white;
+}
+
+/* carecredit */
+.carecredit {
+  padding: 100px 0;
+  text-align: center;
+}
+.carecredit img {
+  padding-bottom: 30px;
+}
+/* CareCredit Apply */
+.carecredit-apply {
+  padding-bottom: 100px;
+}
+
+
+/* financing */
+.financing {
+  text-align: left;
 }
 
 .carecredit-video video {
