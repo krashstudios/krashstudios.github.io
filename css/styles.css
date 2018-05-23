@@ -37,9 +37,28 @@ Positions Header as absolute for all other pages
   position: absolute;
 }
 
+/*
+Sticks the Header to top of page
+*/
 .sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
   position: sticky;
   top: 0;
+}
+
+/*
+Hides Sticky Header -100px off top of page
+*/
+.nonSticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: -100px;
 }
 
 /* =============================================================================
