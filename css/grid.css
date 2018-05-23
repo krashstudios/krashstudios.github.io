@@ -1,4 +1,20 @@
-/* Media Query Breaking Points (600px - Tablet), (900px - Tablet Portrait), (1200px, 1800px - Desktop) */
+/*
+Media Query Breaking Points (600px - Tablet), (900px - Tablet Portrait), (1200px, 1800px - Desktop)
+*/
+/*
+Tablet Media Queries - Section
+*/
+/* @media screen and (min-width:600px) {}
+
+/*
+Tablet Portrait Media Queries - Section
+*/
+/* @media screen and (min-width:900px) {} */
+
+/*
+Desktop Media Queries - Section
+*/
+/* @media screen and (min-width:1200px) {} */
 
 /* =============================================================================
    Header
@@ -232,8 +248,45 @@ Desktop Media Query - .footer-content
 
 /* Insurance Page
    ========================================================================== */
-
-
+.provider-logo {
+  display: grid;
+  grid-template-columns: minmax(20px, auto) 1fr minmax(20px, auto);
+  grid-row-gap: 50px;
+  grid-template-areas:
+    ". vsp ."
+    ". vcd ."
+    ". em ."
+  ;
+  justify-content: space-around;
+}
+/* Provider Logo Areas */
+.vsp-logo {
+  grid-area: vsp;
+  justify-self: center;
+}
+.vcd-logo {
+  grid-area: vcd;
+  justify-self: center;
+}
+.em-logo {
+  grid-area: em;
+  justify-self: center;
+}
+@media screen and (min-width:768px) {
+  .provider-logo {
+    grid-template-columns: minmax(20px, auto) 1fr 1fr 1fr minmax(20px, auto);
+    grid-column-gap: 60px;
+    grid-template-areas:
+      ". vsp vcd em ."
+    ;
+  }
+  .vsp-logo {
+    justify-self: end;
+  }
+  .em-logo {
+    justify-self: start;
+  }
+}
 
 /* Contact Page
    ========================================================================== */

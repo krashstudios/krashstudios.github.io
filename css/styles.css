@@ -766,10 +766,6 @@ Provider Logo
 */
 .provider-logo {
   padding: 30px 0;
-  text-align: center;
-}
-.provider-logo img {
-  padding: 30px 0;
 }
 
 /*
@@ -788,14 +784,54 @@ Provider Links
 .provider-links a:hover {
   color: rgb(61,197,223);
 }
-.provider-links h2, h4 {
+.provider-links h2, h3 {
   text-align: center;
 }
 /* vision plans */
 .vision-plans {
+  max-width: ;
   padding-top: 30px;
 }
+/* mediacal plans */
+.medical-plans {
+  max-width: ;
+}
 
+/*
+Tablet Media Queries - Provider Links/Provider Info
+*/
+@media screen and (min-width:768px) {
+  .provider-links h3 {
+    text-align: left;
+  }
+  .provider-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .vision-plans {
+    flex-basis: 50%;
+    max-width: 350px;
+  }
+  .medical-plans {
+    flex-basis: 50%;
+    max-width: 350px;
+    padding-top: 30px;
+  }
+}
+/*
+Tablet Portrait Media Queries - Provider Links/Provider Info
+*/
+@media screen and (min-width:900px) {
+
+}
+/*
+Desktop Media Queries - Provider Links/Provider Info
+*/
+@media screen and (min-width:1200px) {
+
+}
 
 /*
 Insurance Help
