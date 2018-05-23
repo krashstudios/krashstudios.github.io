@@ -24,20 +24,6 @@
 }
 
 /*
-Fixes Header to top of Home Page
-*/
-.fixed {
-  position: fixed;
-}
-
-/*
-Positions Header as absolute for all other pages
-*/
-.absolute {
-  position: absolute;
-}
-
-/*
 Sticks the Header to top of page
 */
 .sticky {
@@ -52,7 +38,7 @@ Sticks the Header to top of page
 /*
 Hides Sticky Header -100px off top of page
 */
-.nonSticky {
+.non-sticky {
   position: sticky;
   position: -webkit-sticky;
   position: -moz-sticky;
