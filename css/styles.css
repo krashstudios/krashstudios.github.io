@@ -29,9 +29,6 @@ Sticks the Header to top of page
 .sticky {
   position: sticky;
   position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
   top: 0;
 }
 
@@ -41,9 +38,6 @@ Hides Sticky Header -100px off top of page
 .non-sticky {
   position: sticky;
   position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
   top: -100px;
 }
 
@@ -831,7 +825,7 @@ Desktop Media Query - .right p
   color: rgb(105,105,105);
   border: 2px solid rgba(255,255,255,0.18);
   display: inline-block;
-  padding: 8px 20px;
+  padding: 0 20px;
   width: 30%;
   height: 40px;
   float: right;
