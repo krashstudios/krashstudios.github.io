@@ -23,7 +23,24 @@
   text-decoration: none;
 }
 
+/*
+Fixes Header to top of Home Page
+*/
+.fixed {
+  position: fixed;
+}
 
+/*
+Positions Header as absolute for all other pages
+*/
+.absolute {
+  position: absolute;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
 
 /* =============================================================================
    Navigation
