@@ -92,6 +92,11 @@ nav ul li ul a:hover {
   background-color: rgb(61,197,223);
 }
 
+nav ul li ul a:active {
+  color: white;
+  background-color: rgb(61,197,223);
+}
+
 /* Highlight Active Navigation Link  */
 .active {
   color: rgb(61,197,223)
@@ -759,13 +764,19 @@ Desktop Media Query - .right p
 }
 
 .providerLogo img {
-  padding: 30px;
+  padding: 20px;
 }
 
 .providerLinks {}
 
 .providerLinks h2 {
   text-align: center;
+}
+
+.carecredit-video video {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
 }
 
 /* Contact Page
