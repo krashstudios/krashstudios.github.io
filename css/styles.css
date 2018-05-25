@@ -754,7 +754,7 @@ Our Practice Hero
   background-position: center;
   background-size: cover;
 
-  filter: grayscale(60%);
+  filter: grayscale(80%);
 }
 .practice-hero {
   position: relative;
