@@ -735,7 +735,62 @@ Desktop Media Query - .right p
 
 /* Our Practice Page
    ========================================================================== */
+/*
+Our Practice Hero
+*/
+.practice-hero::before {
+  content: '';
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
 
+  width: 100%;
+  height: 468px;
+
+  background-image: url(../img/ourpractice/our-practice.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  filter: grayscale(60%);
+}
+.practice-hero {
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  text-align: center;
+}
+.practice-hero h1 {
+  color: white;
+}
+.practice-hero p {
+  color: white;
+}
+.practice-hero .container {
+  padding: 100px 0;
+}
+
+.blue-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(67,166,216,0.7);
+}
+
+/*
+Meet the Doctors
+*/
+.meet-doctors {
+  padding: 100px 0;
+}
+.meet-doctors h2 {
+  text-align: center;
+}
 
 
 /* Technology Page
