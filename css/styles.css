@@ -928,6 +928,7 @@ CareCredit
     padding-top: 45px;
   }
 }
+/* Responsive Video Styles */
 .carecredit-video video {
   width: 100%;
   max-width: 500px;
