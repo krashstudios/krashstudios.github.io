@@ -786,10 +786,55 @@ Our Practice Hero
 Meet the Doctors
 */
 .meet-doctors {
-  padding: 100px 0;
+  padding: 100px 0 50px;
 }
 .meet-doctors h2 {
   text-align: center;
+}
+/* Dr Bio */
+.dr-bio {
+  text-align: center;
+  padding: 20px 0;
+}
+.dr-bio.wellman {
+  padding-bottom: 100px;
+}
+
+.dr-bio p, ul, ol {
+  text-align: left;
+}
+
+/*
+Tablet Portrait Media Query - .dr-bio
+1. Aligns Dr img to the left
+2. Aligns h3 to the left
+*/
+@media screen and (min-width:900px) {
+  .dr-bio {
+    text-align: left;/* 1 */
+  }
+  .dr-bio h3 {
+    text-align: left; /* 2 */
+  }
+}
+
+/* Dr Picture */
+.dr-pic {
+  border: 3px solid rgb(105,105,105);
+  border-radius: 50%;
+  padding: 4px;
+  margin: 25px 0;
+  width: 120px;
+  height: auto;
+}
+/*
+Tablet Portrait Media Query - .dr-pic
+1. Changes the Dr Pic to a larger size
+*/
+@media screen and (min-width:900px) {
+  .dr-pic {
+    width: 150px;
+  }
 }
 
 
