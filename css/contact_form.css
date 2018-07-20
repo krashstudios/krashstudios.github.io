@@ -1,0 +1,87 @@
+
+/* ============ .contact-form CSS grid ============ */
+
+/* contact form CSS grid layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 35px;
+}
+
+/* grid item */
+.submit-button {
+  justify-self: center;
+}
+
+@media screen and (min-width: 736px) {
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 40px 40px 140px 40px;
+    grid-gap: 35px;
+  }
+
+  /* --- grid items --- */
+  .comment-box {
+    grid-column: 1 / -1;
+  }
+
+  .submit-button {
+    justify-self: start;
+  }
+
+}
+
+/* ============ form styles ============ */
+
+/* adds space on top for label */
+.contact-form {
+  margin-top: 30px;
+}
+
+/* positioning .form-field relative, so .lable can be positioned on-top (absolute) */
+.form-field {
+  position: relative;
+}
+
+/* label styles */
+.label {
+  position: absolute;
+  left: 0;
+  top: -25px;
+  line-height: 26px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #888;
+  cursor: text;
+}
+
+/* input styles */
+.message-form input[type="text"],
+.message-form input[type="password"],
+.message-form input[type="date"],
+.message-form input[type="datetime"],
+.message-form input[type="email"],
+.message-form input[type="number"],
+.message-form input[type="search"],
+.message-form input[type="tel"],
+.message-form input[type="time"],
+.message-form input[type="url"],
+.message-form textarea,
+.message-form select {
+
+  border: none;
+  height: 40px;
+  padding: 0 10px;
+  width: 100%;
+  background-color: rgb(247,247,247);
+  color: rgb(85,85,85);
+}
+
+/* text area styles */
+.message-form textarea {
+  height: 140px !important;
+  padding: 10px 10px;
+
+}

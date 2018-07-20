@@ -307,3 +307,23 @@ Desktop Media Query - Sets Financing section as 2 column grid
 
 /* Contact Page
    ========================================================================== */
+
+
+/*
+Desktop Media Query - Aligns Form and Contact Info
+*/
+@media screen and (min-width:1200px) {
+  .contact-us {
+    display: grid;
+    grid-template-columns: minmax(auto, 20%) 750px 410px minmax(auto, 20%);
+    grid-template-areas:
+    ". mf ch .";
+  }
+
+  .message-form {
+    grid-area: mf;
+  }
+  .contact-hours{
+    grid-area: ch;
+  }
+}
