@@ -1043,7 +1043,7 @@ Contact Hero
 Contact Form
 */
 .contact-us {
-  padding: 100px 15px;
+  padding: 100px 20px;
 }
 .message-form h2 {
   font-weight: 500;
@@ -1052,7 +1052,9 @@ Contact Form
 .contact-hours {
   display: table;
   padding-top: 90px;
+
 }
+
 /* Desktop Media Query - .Contact-hours */
 @media screen and (min-width:1200px) {
   .contact-hours {

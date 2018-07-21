@@ -308,6 +308,21 @@ Desktop Media Query - Sets Financing section as 2 column grid
 /* Contact Page
    ========================================================================== */
 
+.contact-us {
+  display: grid;
+  grid-template-columns: minmax(auto, 4%) 1fr minmax(auto, 4%);
+  grid-template-areas:
+  ". mf ."
+  ". ch .";
+}
+
+.message-form {
+  grid-area: mf;
+}
+.contact-hours{
+  grid-area: ch;
+  justify-self: Center;
+}
 
 /*
 Desktop Media Query - Aligns Form and Contact Info
@@ -318,12 +333,5 @@ Desktop Media Query - Aligns Form and Contact Info
     grid-template-columns: minmax(auto, 20%) 750px 410px minmax(auto, 20%);
     grid-template-areas:
     ". mf ch .";
-  }
-
-  .message-form {
-    grid-area: mf;
-  }
-  .contact-hours{
-    grid-area: ch;
   }
 }
