@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/contact_form.css">
     <!-- Scripts -->
-    <script async defer
-  src="https://maps.googleapis.com/maps/api/js?client=AIzaSyB2w3porQz8iG2azSecs1urt5yvmmLHi9g &v=3.32&callback=initMap"></script>
+
     <!--[if lt IE 9]>
 	    <script src="js/html5shiv.js"></script>
     <![endif]-->
@@ -146,9 +145,146 @@
           </div>
         </section>
 
-        <div class="googlemap">
+        <div id="map"></div>
+        <!-- Google Map Options-->
+        <script>
+          function initMap() {
+            var location = {lat: 33.651066, lng: -112.254376};
+            var map = new google.maps.Map(document.getElementById("map"), {
+              zoom: 15,
+              center: location
+              styles:
+              [
+                {
+                  "stylers": [
+                    {
+                      "saturation": -100
+                    },
+                    {
+                      "gamma": 1
+                    }
+                  ]
+                },
+                {
+                  "elementType": "labels.text.stroke",
+                  "stylers": [
+                    {
+                      "visibility": "off"
+                    }
+                  ]
+                },
+                {
+                  "featureType": "administrative.neighborhood",
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                    {
+                      "color": "#333333"
+                    }
+                  ]
+                },
+                {
+                  "featureType": "poi.business",
+                  "elementType": "labels.icon",
+                  "stylers": [
+                    {
+                      "visibility": "off"
+                    }
+                  ]
+                },
+                {
+                  "featureType": "poi.business",
+                  "elementType": "labels.text",
+                  "stylers": [
+                    {
+                      "visibility": "off"
+                    }
+                  ]
+                },
+                {
+                  "featureType": "poi.place_of_worship",
+                  "elementType": "labels.icon",
+                  "stylers": [
+                    {
+                      "visibility": "off"
+                    }
+                  ]
+                },
+                {
+                  "featureType": "poi.place_of_worship",
+                  "elementType": "labels.text",
+                  "stylers": [
+                    {
+                      "visibility": "off"
+                    }
+                  ]
+                },
+                {
+                  "featureType": "road",
+                  "elementType": "geometry",
+                  "stylers": [
+                    {
+                      "visibility": "simplified"
+                    }
+                  ]
+                },
+                {
+                  "featureType": "road.local",
+                  "elementType": "labels.text",
+                  "stylers": [
+                    {
+                      "color": "#333333"
+                    },
+                    {
+                      "weight": 0.5
+                    }
+                  ]
+                },
+                {
+                  "featureType": "transit.station",
+                  "elementType": "labels.icon",
+                  "stylers": [
+                    {
+                      "saturation": 50
+                    },
+                    {
+                      "gamma": 1
+                    }
+                  ]
+                },
+                {
+                  "featureType": "water",
+                  "stylers": [
+                    {
+                      "hue": "#50a5d1"
+                    },
+                    {
+                      "saturation": 50
+                    },
+                    {
+                      "visibility": "on"
+                    }
+                  ]
+                }
+              ] //End of style array
+            });
+
+            //Map Marker
+            var marker = new google.maps.Marker({
+              position: location,
+              map: map
+              //icon: 'img/contact/mapMarker.png'
+            });
+          }
+        </script>
+        <!-- Google Map API Key -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMoSluec03Ku8AJzF45XOc44ysAcMNuBw&callback=initMap"
+  type="text/javascript">
+        </script>
+        <!-- API Key: AIzaSyDMoSluec03Ku8AJzF45XOc44ysAcMNuBw -->
+
+        <!-- <div class="googlemap">
           <iframe src="https://snazzymaps.com/embed/66767"></iframe>
-        </div>
+        </div> -->
 
       </main>
 
