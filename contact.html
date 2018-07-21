@@ -149,123 +149,129 @@
         <!-- Google Map Options-->
         <script>
           function initMap() {
+            //Map Style Array
+            var mapStyle = [
+              {
+                "stylers": [
+                  {
+                    "saturation": -100
+                  },
+                  {
+                    "gamma": 1
+                  }
+                ]
+              },
+              {
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "administrative.neighborhood",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#333333"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi.business",
+                "elementType": "labels.icon",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi.business",
+                "elementType": "labels.text",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi.place_of_worship",
+                "elementType": "labels.icon",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi.place_of_worship",
+                "elementType": "labels.text",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "visibility": "simplified"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.local",
+                "elementType": "labels.text",
+                "stylers": [
+                  {
+                    "color": "#333333"
+                  },
+                  {
+                    "weight": 0.5
+                  }
+                ]
+              },
+              {
+                "featureType": "transit.station",
+                "elementType": "labels.icon",
+                "stylers": [
+                  {
+                    "saturation": 50
+                  },
+                  {
+                    "gamma": 1
+                  }
+                ]
+              },
+              {
+                "featureType": "water",
+                "stylers": [
+                  {
+                    "hue": "#50a5d1"
+                  },
+                  {
+                    "saturation": 50
+                  },
+                  {
+                    "visibility": "on"
+                  }
+                ]
+              }
+            ] //End of style array
+
+            //Map Options
             var location = {lat: 33.651066, lng: -112.254376};
             var map = new google.maps.Map(document.getElementById("map"), {
+              scrollwheel: false,
+              mapTypeControl: false,
               zoom: 15,
-              center: location
-              styles:
-              [
-                {
-                  "stylers": [
-                    {
-                      "saturation": -100
-                    },
-                    {
-                      "gamma": 1
-                    }
-                  ]
-                },
-                {
-                  "elementType": "labels.text.stroke",
-                  "stylers": [
-                    {
-                      "visibility": "off"
-                    }
-                  ]
-                },
-                {
-                  "featureType": "administrative.neighborhood",
-                  "elementType": "labels.text.fill",
-                  "stylers": [
-                    {
-                      "color": "#333333"
-                    }
-                  ]
-                },
-                {
-                  "featureType": "poi.business",
-                  "elementType": "labels.icon",
-                  "stylers": [
-                    {
-                      "visibility": "off"
-                    }
-                  ]
-                },
-                {
-                  "featureType": "poi.business",
-                  "elementType": "labels.text",
-                  "stylers": [
-                    {
-                      "visibility": "off"
-                    }
-                  ]
-                },
-                {
-                  "featureType": "poi.place_of_worship",
-                  "elementType": "labels.icon",
-                  "stylers": [
-                    {
-                      "visibility": "off"
-                    }
-                  ]
-                },
-                {
-                  "featureType": "poi.place_of_worship",
-                  "elementType": "labels.text",
-                  "stylers": [
-                    {
-                      "visibility": "off"
-                    }
-                  ]
-                },
-                {
-                  "featureType": "road",
-                  "elementType": "geometry",
-                  "stylers": [
-                    {
-                      "visibility": "simplified"
-                    }
-                  ]
-                },
-                {
-                  "featureType": "road.local",
-                  "elementType": "labels.text",
-                  "stylers": [
-                    {
-                      "color": "#333333"
-                    },
-                    {
-                      "weight": 0.5
-                    }
-                  ]
-                },
-                {
-                  "featureType": "transit.station",
-                  "elementType": "labels.icon",
-                  "stylers": [
-                    {
-                      "saturation": 50
-                    },
-                    {
-                      "gamma": 1
-                    }
-                  ]
-                },
-                {
-                  "featureType": "water",
-                  "stylers": [
-                    {
-                      "hue": "#50a5d1"
-                    },
-                    {
-                      "saturation": 50
-                    },
-                    {
-                      "visibility": "on"
-                    }
-                  ]
-                }
-              ] //End of style array
+              center: location,
+              styles: mapStyle
+
             });
 
             //Map Marker
@@ -276,15 +282,10 @@
             });
           }
         </script>
-        <!-- Google Map API Key -->
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMoSluec03Ku8AJzF45XOc44ysAcMNuBw&callback=initMap"
+        <!-- Google Map API Key --><!-- API Key: AIzaSyB2w3porQz8iG2azSecs1urt5yvmmLHi9g -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2w3porQz8iG2azSecs1urt5yvmmLHi9g&callback=initMap"
   type="text/javascript">
         </script>
-        <!-- API Key: AIzaSyDMoSluec03Ku8AJzF45XOc44ysAcMNuBw -->
-
-        <!-- <div class="googlemap">
-          <iframe src="https://snazzymaps.com/embed/66767"></iframe>
-        </div> -->
 
       </main>
 
@@ -309,7 +310,7 @@
           <div id="email" class="info-box">
             <i class="ion-ios-email-outline"></i>
             <h5>Email</h5>
-            <a href="mailto:"><small>contact@eyetech.com</small></a>
+            <a href="contact.html"><small>Send us a message</small></a>
           </div>
           <!-- Website -->
           <div id="website" class="info-box">

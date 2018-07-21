@@ -1051,8 +1051,15 @@ Contact Form
 
 .contact-hours {
   display: table;
-  padding-left: 60px;
-  padding-bottom: 170px;
+  padding-top: 90px;
+}
+/* Desktop Media Query - .Contact-hours */
+@media screen and (min-width:1200px) {
+  .contact-hours {
+    padding-top: 0;
+    padding-bottom: 170px;
+    padding-left: 60px;
+  }
 }
 /*
 Contact Hours Table
@@ -1080,22 +1087,6 @@ Contact Hours Table
   text-align: inherit;
 }
 
-/* Google Map */
-/* .googlemap {
-  position: relative;
-  padding-bottom: 25%;
-  height: 0;
-  overflow: hidden;
-}
-
-.googlemap iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  border: none;
-} */
 #map {
   height: 460px;
   width: 100%;
