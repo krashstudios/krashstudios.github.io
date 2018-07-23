@@ -1078,13 +1078,25 @@ Contact Form
   font-size: 1.5rem;
 }
 
-/* Desktop Media Query - .Contact-hours */
+/*
+Tablet Media Query - .Contact-us
+*/
+@media screen and (min-width:900px) {
+  .call-us {
+    padding-top: 110px;
+  }
+}
+
+/*
+Desktop Media Query - .Contact-hours
+*/
 @media screen and (min-width:1200px) {
   .contact-hours {
     padding-top: 0;
   }
 
   .call-us {
+    padding-top: 0;
     padding-left: 53px;
   }
 }

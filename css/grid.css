@@ -330,14 +330,30 @@ Desktop Media Query - Sets Financing section as 2 column grid
 }
 
 /*
+Tablet Media Query - Aligns Office Hours and Give us a call under Message
+*/
+@media screen and (min-width:900px) {
+  .contact-us {
+    grid-template-columns: minmax(auto,3%) repeat(2, 1fr) minmax(auto,3%);
+    grid-template-areas:
+    ". mf mf ."
+    ". ch cl .";
+  }
+
+}
+
+/*
 Desktop Media Query - Aligns Form and Contact Info
 */
 @media screen and (min-width:1200px) {
   .contact-us {
-    display: grid;
     grid-template-columns: minmax(auto, 20%) 750px 410px minmax(auto, 20%);
     grid-template-areas:
     ". mf ch ."
     ". mf cl .";
+  }
+
+  .call-us {
+    justify-self: left;
   }
 }
