@@ -1061,7 +1061,7 @@ Contact Form
   line-height: 33px;
 }
 .contact-hours td:first-child {
-  padding-right: 80px;
+  padding-right: 40px;
 }
 
 /* Desktop Media Query - .Contact-hours */
