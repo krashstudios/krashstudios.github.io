@@ -1047,46 +1047,28 @@ Contact Form
 }
 .message-form h2 {
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 .contact-hours {
-  display: table;
-  padding-top: 90px;
-
+  padding-top: 100px;
+}
+.contact-hours h2 {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.contact-hours table td, table th {
+  line-height: 33px;
+}
+.contact-hours td:first-child {
+  padding-right: 80px;
 }
 
 /* Desktop Media Query - .Contact-hours */
 @media screen and (min-width:1200px) {
   .contact-hours {
     padding-top: 0;
-    padding-bottom: 170px;
-    padding-left: 60px;
   }
-}
-/*
-Contact Hours Table
-*/
-.row {
-  display:table-row;
-}
-.rowGroup {
-  display:table-row-group;
-}
-.cell {
-  display:table-cell;
-  width: 25%;
-}
-
-.contact-hours h2 {
-  font-weight: 500;
-  text-transform: capitalize;
-}
-.contact-hours p {
-  text-indent: 0;
-}
-.contact-hours span {
-  padding-left: 30px;
-  text-align: inherit;
 }
 
 #map {
