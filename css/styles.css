@@ -41,10 +41,9 @@ Hides Sticky Header -100px off top of page
   top: -100px;
 }
 
-#header-logo {
+#header-logo img {
   height: auto;
-  width: 200px;
-  font-family: 'Exotic-Bold'
+  width: 150px;
 }
 
 /* .logo {
@@ -251,10 +250,9 @@ footer {
   background-color: rgb(33,33,33);
 }
 
-#footer-logo {
+#footer-logo img {
   height: auto;
   width: 200px;
-  font-family: 'Exotic-Bold';
 }
 
 /* Contact Info

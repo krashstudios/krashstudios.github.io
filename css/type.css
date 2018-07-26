@@ -13,16 +13,6 @@ Website ...... http://ionicons.com/
 */
 @import url("ionicons.min.css");
 
-/*
-Custom Fonts
-*/
-@font-face {
-font-family: 'Exotic-Bold';
-font-style: normal;
-font-weight: normal;
-src: local('Exotic-Bold'), url('fonts/Exotic-Bold.ttf') format('truetype');
-}
-
 /* Defaults
    ========================================================================== */
 
