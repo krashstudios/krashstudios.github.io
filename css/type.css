@@ -20,7 +20,7 @@ Custom Fonts
 font-family: 'Exotic-Bold';
 font-style: normal;
 font-weight: normal;
-src: local('Exotic-Bold'), url('../fonts/Exotic-Bold.ttf') format('ttf');
+src: url('../fonts/Exotic-Bold.ttf') format('ttf');
 }
 
 /* Defaults
