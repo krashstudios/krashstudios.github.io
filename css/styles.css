@@ -41,6 +41,16 @@ Hides Sticky Header -100px off top of page
   top: -100px;
 }
 
+#header-logo {
+  height: auto;
+  width: 200px;
+}
+
+/* .logo {
+  height: auto;
+  width: 150px;
+} */
+
 /* =============================================================================
    Navigation
    ========================================================================== */
@@ -240,7 +250,10 @@ footer {
   background-color: rgb(33,33,33);
 }
 
-
+#footer-logo {
+  height: auto;
+  width: 200px;
+}
 
 /* Contact Info
    ========================================================================== */
