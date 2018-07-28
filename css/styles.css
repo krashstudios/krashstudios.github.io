@@ -744,7 +744,10 @@ Desktop Media Query - .right p
 
 /* Home Page
    ========================================================================== */
-
+.parallax {
+  min-height: 50vh;
+  background: transparent;
+}
 
 
 /* Our Practice Page
