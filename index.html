@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="css/type.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/jquery.parallax.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
     <!--[if lt IE 9]>
 	    <script src="js/html5shiv.js"></script>
     <![endif]-->
@@ -52,7 +55,7 @@
 
       <main>
 
-
+        <!-- Eyewear Marquee -->
         <div class="parallax" data-parallax="scroll" data-src="img/index/faded-wood.jpg">
           <div class="marquee">
             <div class="marquee-content">
@@ -108,8 +111,48 @@
             <p>We carry quality frames to fit your needs. Let our team help you find a style that fits your personality perfectly.</p>
           </div>
         </div>
+        <!-- Testimonials -->
+        <section class="testimonials">
+          <div class="testimonial-overlay">
+            <div class="owl-carousel">
+              <div>
+                <img src="img/index/testimonials/johnb.png" alt="John B. testimonial image" class="testimonial-image">
+                <blockquote><p>I have been using Eye Tech exclusively for about 4 years now and am always very happy with staff, doctors and atmosphere. Staff and doctors are very competent and friendly and equipment is state of the art.</p></blockquote>
+                <blockquote><p><strong>My go-to eye guys . . . &#8212; John B.</strong></p></blockquote>
+              </div>
 
-        
+              <div>
+                <img src="img/index/testimonials/johnb.png" alt="John B. testimonial image" class="testimonial-image">
+                <blockquote><p>I have been using Eye Tech exclusively for about 4 years now and am always very happy with staff, doctors and atmosphere. Staff and doctors are very competent and friendly and equipment is state of the art.</p></blockquote>
+                <blockquote><p><strong>My go-to eye guys . . . &#8212; John B.</strong></p></blockquote>
+              </div>
+
+              <div>
+                <img src="img/index/testimonials/johnb.png" alt="John B. testimonial image" class="testimonial-image">
+                <blockquote><p>I have been using Eye Tech exclusively for about 4 years now and am always very happy with staff, doctors and atmosphere. Staff and doctors are very competent and friendly and equipment is state of the art.</p></blockquote>
+                <blockquote><p><strong>My go-to eye guys . . . &#8212; John B.</strong></p></blockquote>
+              </div>
+
+              <div>
+                <img src="img/index/testimonials/johnb.png" alt="John B. testimonial image" class="testimonial-image">
+                <blockquote><p>I have been using Eye Tech exclusively for about 4 years now and am always very happy with staff, doctors and atmosphere. Staff and doctors are very competent and friendly and equipment is state of the art.</p></blockquote>
+                <blockquote><p><strong>My go-to eye guys . . . &#8212; John B.</strong></p></blockquote>
+              </div>
+
+              <div>
+                <img src="img/index/testimonials/johnb.png" alt="John B. testimonial image" class="testimonial-image">
+                <blockquote><p>I have been using Eye Tech exclusively for about 4 years now and am always very happy with staff, doctors and atmosphere. Staff and doctors are very competent and friendly and equipment is state of the art.</p></blockquote>
+                <blockquote><p><strong>My go-to eye guys . . . &#8212; John B.</strong></p></blockquote>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          $(document).ready(function(){
+            $(".owl-carousel").owlCarousel();
+          });
+        </script>
 
 
       </main>
