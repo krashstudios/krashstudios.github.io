@@ -801,10 +801,17 @@ img.marquee-brand:hover {
   100%{ box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3); opacity:1; }
 }
 
-.parallax .container h1, p {
+.parallax .container h1 {
   display: inline-block;
   color: white;
 }
+.parallax .container p {
+  color: white;
+}
+
+/*
+Testimonials
+*/
 
 /* Our Practice Page
    ========================================================================== */
