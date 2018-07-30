@@ -744,6 +744,9 @@ Desktop Media Query - .right p
 
 /* Home Page
    ========================================================================== */
+/*
+Brand Marquee
+ */
 .parallax {
   min-height: 50vh;
   background: transparent;
@@ -778,17 +781,13 @@ img.marquee-brand:hover {
   cursor: pointer;
 }
 
-/*
-Marquee Animation
-*/
+/* Marquee Animation */
 @keyframes marquee {
   0% {transform: translateX(0)}
   100% {transform: translate(-50%);}
 }
 
-/*
-Border Bounce Animation
-*/
+/* Border Bounce Animation */
 @keyframes bounceOut {
   0%{ box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3); opacity:1; }
 
