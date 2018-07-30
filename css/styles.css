@@ -806,6 +806,7 @@ img.marquee-brand:hover {
   color: white;
 }
 .parallax .container p {
+  display: inline-block;
   color: white;
 }
 
