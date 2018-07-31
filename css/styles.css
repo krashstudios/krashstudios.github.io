@@ -723,23 +723,29 @@ Desktop Media Query - .right p
 }
 
 @media (min-width: 768px) {
-.container {
-  max-width: 720px;
-}
+  .container {
+    max-width: 720px;
+  }
 }
 
 @media (min-width: 992px) {
-.container {
-  max-width: 960px;
-}
+  .container {
+    max-width: 960px;
+  }
 }
 
 @media (min-width: 1200px) {
-.container {
-  max-width: 1140px;
-}
+  .container {
+    max-width: 1140px;
+  }
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 
 /* Home Page
@@ -832,6 +838,7 @@ Testimonials
   filter: grayscale(80%);
 }
 .testimonials {
+  text-align: center;
   position: relative;
   left: 0;
   right: 0;
@@ -857,21 +864,30 @@ img.testimonial-image {
   height: auto;
   filter: grayscale(60%);
 }
+
 blockquote {
-  margin: 1.5em 10px;
-  padding: 0.4em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
+  margin:1.5em 1em;
+  padding:.5em 1em;
+  quotes:"\201C""\201D";
 }
 blockquote:before {
-  color: white;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
+  color:white;
+  content:open-quote;
+  font-size:4em;
+  line-height:.1em;
+  margin-right:.25em;
+  vertical-align:-.4em;
 }
-blockquote p {
-  display: inline;
+blockquote :first-child {
+  display:inline;
+}
+blockquote :last-child {
+  margin-bottom:0;
+}
+
+.disclaimer {
+  color: white;
+  font-size: .6em;
 }
 
 
@@ -1338,4 +1354,7 @@ Colors
 */
 .blue {
   color: rgb(61,197,223);
+}
+.charcoal {
+  color: rgb(51, 51, 51);
 }
