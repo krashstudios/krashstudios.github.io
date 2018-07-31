@@ -819,38 +819,12 @@ img.marquee-brand:hover {
 /*
 Testimonials
 */
-.testimonials::before {
-  content:'';
-  position: relative;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  display: block;
-
-  min-height: 468px;
-  width: 100%;
-
-  background-image: url(../img/index/people-grid.jpg);
+.testimonials {
+  text-align: center;
+  background-image: url(../img/index/people-grid02.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
-  filter: grayscale(80%);
-}
-.testimonials {
-  text-align: center;
-  position: relative;
-  left: 0;
-  right: 0;
-  z-index: 0;
-}
-.testimonial-overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(67,166,216,0.7);
 }
 .testimonials p {
   color: white;
