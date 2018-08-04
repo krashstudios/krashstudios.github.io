@@ -756,7 +756,8 @@ Hero
 .hero {
   height: 60vh;
   width: 100%;
-  background-image: url(../img/index/phoropter.jpg);
+  background-image: url(../img/index/preview.jpg);
+  /* background-image: url(../img/index/phoropter.jpg); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
