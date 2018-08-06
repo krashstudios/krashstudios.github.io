@@ -762,6 +762,24 @@ Hero
   background-position: center;
   background-size: cover;
 }
+.hero h1 {
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 8px black;
+  font-size: 3.5vw;
+  font-weight: 300;
+  line-height: 2rem;
+}
+.hero .slogan {
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 55%;
+}
+.hero .indent {
+  text-indent: 150px;
+}
 
 
 
@@ -830,6 +848,7 @@ img.marquee-brand:hover {
   display: inline-block;
   color: white;
 }
+
 
 /*
 Testimonials
