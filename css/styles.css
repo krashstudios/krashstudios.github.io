@@ -795,8 +795,8 @@ Hero
 Brand Marquee
  */
 .parallax {
-  min-height: 50vh;
   background: transparent;
+  padding: 40px 0;
   text-align: center;
 }
 
