@@ -763,7 +763,7 @@ Hero
   text-align: center;
 }
 #intro {
-  padding-top: 25%;
+  padding-top: 250px;
 }
 #intro h1 {
   color: white;
@@ -792,7 +792,7 @@ Desktop Media Query - Hero CTA layout
 */
 @media screen and (min-width:600px) {
   #intro {
-    padding-top: 150px;
+    padding-top: 200px;
   }
   #intro h1 {
     font-size: 5rem;
