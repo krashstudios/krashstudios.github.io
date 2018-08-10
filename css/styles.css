@@ -754,7 +754,7 @@ Desktop Media Query - .right p
 Hero
 */
 #hero {
-  height: 60vh;
+  height: 70vh;
   width: 100%;
   background-image: url(../img/index/preview.jpg);
   /* background-image: url(../img/index/phoropter.jpg); */
@@ -774,7 +774,7 @@ Hero
   text-transform: capitalize;
 }
 #intro h1 span {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 300;
 }
 
