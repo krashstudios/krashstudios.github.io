@@ -754,27 +754,27 @@ Desktop Media Query - .right p
 Hero
 */
 #hero {
-  height: 70vh;
+  min-height: 60vh;
   width: 100%;
   background-image: url(../img/index/preview.jpg);
-  /* background-image: url(../img/index/phoropter.jpg); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   text-align: center;
 }
 #intro {
-  padding-top: 150px;
+  padding-top: 25%;
 }
 #intro h1 {
   color: white;
-  font-size: 5rem;
-  font-weight: 400;
-  line-height: 70px;
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 50px;
   text-transform: capitalize;
+  text-shadow: 2px 2px 4px rgb(51,51,51);
 }
 #intro h1 span {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 300;
 }
 
@@ -783,16 +783,32 @@ ul#cta {
   padding-left: 0;
   list-style-type: none;
 }
-#cta li {
-  display: inline-block;
-}
-#cta li:first-child {
-  margin-right: 30px;
-}
+
 #cta a {
   text-decoration: none;
 }
+/*
+Desktop Media Query - Hero CTA layout
+*/
+@media screen and (min-width:600px) {
+  #intro {
+    padding-top: 150px;
+  }
+  #intro h1 {
+    font-size: 5rem;
+    line-height: 70px;
+  }
+  #intro h1 span {
+    font-size: 4.5rem;
+  }
 
+  #cta li {
+    display: inline-block;
+  }
+  #cta li:first-child {
+    margin-right: 30px;
+  }
+}
 /*
 Brand Marquee
  */
