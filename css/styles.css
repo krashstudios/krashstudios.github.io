@@ -768,14 +768,14 @@ Hero
 }
 #intro h1 {
   color: white;
-  font-size: 3.5rem;
+  font-size: 3.6rem;
   font-weight: 300;
   line-height: 50px;
   text-transform: capitalize;
   text-shadow: 2px 2px 4px rgb(51,51,51);
 }
 #intro h1 span {
-  font-size: 3rem;
+  font-size: 3.6rem;
   font-weight: 300;
 }
 
@@ -1392,9 +1392,9 @@ Desktop Media Query - .Contact-hours
 }
 
 .cta-btn-2 {
-  background-color: white;
-  color: rgb(51,51,51);
-  border: 2px solid white;
+  background-color: rgb(61,197,223);
+  color: white;
+  border: 2px solid rgb(61,197,223);
   display: inline-block;
   padding: 12px 30px;
   min-width: 250px;
@@ -1406,10 +1406,10 @@ Desktop Media Query - .Contact-hours
 }
 .cta-btn-2:hover {
   background-color: transparent;
-  color: white;
+  color: rgb(61,197,223);
 }
 .cta-btn-2:active {
-  border: 1px dotted white;
+  border: 1px dotted rgb(61,197,223);
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
