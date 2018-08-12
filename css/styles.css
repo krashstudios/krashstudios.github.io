@@ -754,6 +754,7 @@ Desktop Media Query - .right p
 Hero
 */
 #hero {
+  display: inline-block;
   min-height: 70vh;
   width: 100%;
   background-image: url(../img/index/preview.jpg);
