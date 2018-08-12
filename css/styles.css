@@ -768,15 +768,15 @@ Hero
 }
 #intro h1 {
   color: white;
-  font-size: 3.6rem;
-  font-weight: 300;
+  font-size: 3.5rem;
+  font-weight: 500;
   line-height: 50px;
   text-transform: capitalize;
-  text-shadow: 2px 2px 4px rgb(51,51,51);
+  text-shadow: 2px 2px 8px rgb(51,51,51);
 }
 #intro h1 span {
-  font-size: 3.6rem;
-  font-weight: 300;
+  font-size: 3.5rem;
+  font-weight: 500;
 }
 
 ul#cta {
@@ -796,10 +796,12 @@ Desktop Media Query - Hero CTA layout
   }
   #intro h1 {
     font-size: 5rem;
+    font-weight: 600;
     line-height: 70px;
   }
   #intro h1 span {
     font-size: 4.5rem;
+    font-weight: 600;
   }
 
   #cta li {
