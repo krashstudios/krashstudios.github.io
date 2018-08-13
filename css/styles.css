@@ -895,6 +895,7 @@ img.marquee-brand:hover {
 Testimonials
 */
 .testimonials {
+  padding: 45px 0;
   text-align: center;
   background-image: url(../img/index/people-grid02.jpg);
   background-repeat: no-repeat;
@@ -916,7 +917,7 @@ img.testimonial-image {
 
 blockquote {
   margin:1.5em 1em;
-  padding:.5em 1em;
+  padding:.5em 2em;
   quotes:"\201C""\201D";
 }
 blockquote:before {
