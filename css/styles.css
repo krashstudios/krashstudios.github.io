@@ -753,20 +753,44 @@ Desktop Media Query - .right p
 /*
 Hero
 */
-#hero {
-  display: inline-block;
-  min-height: 70vh;
+/* Allows filter to be added to background-image */
+.hero::before {
+  content:'';
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+
   width: 100%;
+  min-height: 70vh;
+
   background-image: url(../img/index/preview.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  filter: grayscale(80%);
+}
+
+.hero {
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: 0;
   text-align: center;
 }
-#intro {
+
+.intro {
+  position: absolute;
   padding-top: 15vh;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(67,166,216,0.7); */
 }
-#intro h1 {
+.intro h1 {
   color: white;
   font-size: 3.5rem;
   font-weight: 500;
@@ -774,7 +798,7 @@ Hero
   text-transform: capitalize;
   text-shadow: 2px 2px 8px rgb(51,51,51);
 }
-#intro h1 span {
+.intro h1 span {
   font-size: 3.5rem;
   font-weight: 500;
 }
@@ -791,15 +815,15 @@ ul#cta {
 Desktop Media Query - Hero CTA layout
 */
 @media screen and (min-width:600px) {
-  #intro {
+  .intro {
     padding-top: 15vh;
   }
-  #intro h1 {
+  .intro h1 {
     font-size: 5rem;
     font-weight: 600;
     line-height: 70px;
   }
-  #intro h1 span {
+  .intro h1 span {
     font-size: 4.5rem;
     font-weight: 600;
   }
