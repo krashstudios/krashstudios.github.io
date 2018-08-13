@@ -757,7 +757,7 @@ Hero
  display: inline-block;
  min-height: 70vh;
  width: 100%;
- background-image: url(../img/index/preview.jpg);
+ background-image: url(../img/index/hero.jpg);
  background-repeat: no-repeat;
  background-position: center;
  background-size: cover;
@@ -1384,7 +1384,7 @@ Desktop Media Query - .Contact-hours
   float: right;
   cursor: pointer;
 }
-
+/* White Border */
 .cta-btn {
   color: white;
   border: 2px solid white;
@@ -1404,7 +1404,7 @@ Desktop Media Query - .Contact-hours
 .cta-btn:active {
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
 }
-
+/* Blue Background */
 .cta-btn-2 {
   background-color: rgb(61,197,223);
   color: white;
@@ -1426,7 +1426,7 @@ Desktop Media Query - .Contact-hours
   border: 1px dotted rgb(61,197,223);
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
 }
-
+/* Blue Border */
 .cta-btn-3 {
   color: rgb(61,197,223);
   border: 2px solid rgb(61,197,223);
