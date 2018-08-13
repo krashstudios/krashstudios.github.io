@@ -332,13 +332,24 @@
         </div>
 
     </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 </div>
 
 <script>
 var mySwiper = new Swiper('.swiper-container', {
-  
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
   speed: 400,
-  spaceBetween: 100
+  spaceBetween: 100,
+  loop: true,
 });
 </script>
 
