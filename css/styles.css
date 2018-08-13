@@ -753,98 +753,77 @@ Desktop Media Query - .right p
 /*
 Hero
 */
-/* Allows filter to be added to background-image */
-.hero::before {
-  content:'';
-  position: relative;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  display: block;
-
-  width: 100%;
-  min-height: 70vh;
-
-  background-image: url(../img/index/preview.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  filter: grayscale(80%);
+#hero {
+ display: inline-block;
+ min-height: 70vh;
+ width: 100%;
+ background-image: url(../img/index/preview.jpg);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ text-align: center;
 }
-
-.hero {
-  position: relative;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  text-align: center;
+#intro {
+ padding-top: 15vh;
 }
-
-.intro {
-  position: absolute;
-  padding-top: 15vh;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  /* background-color: rgba(67,166,216,0.7); */
+#intro h1 {
+ color: white;
+ font-size: 3.5rem;
+ font-weight: 500;
+ text-transform: capitalize;
+ text-shadow: 2px 2px 8px rgb(51,51,51);
 }
-.intro h1 {
-  color: white;
-  font-size: 3.5rem;
-  font-weight: 500;
-  line-height: 50px;
-  text-transform: capitalize;
-  text-shadow: 2px 2px 8px rgb(51,51,51);
-}
-.intro h1 span {
-  font-size: 3.5rem;
-  font-weight: 500;
+#intro h1 span {
+ font-size: 3.5rem;
+ font-weight: 500;
+ line-height: 1.7em;
 }
 
 ul#cta {
-  padding: 40px 0;
-  list-style-type: none;
+ padding: 40px 0;
+ list-style-type: none;
 }
 
 #cta a {
-  text-decoration: none;
+ text-decoration: none;
 }
 /*
 Desktop Media Query - Hero CTA layout
 */
 @media screen and (min-width:600px) {
-  .intro {
-    padding-top: 15vh;
-  }
-  .intro h1 {
-    font-size: 5rem;
-    font-weight: 600;
-    line-height: 70px;
-  }
-  .intro h1 span {
-    font-size: 4.5rem;
-    font-weight: 600;
-  }
+ #intro {
+   padding-top: 15vh;
+ }
+ #intro h1 {
+   font-size: 5rem;
+   font-weight: 600;
+   line-height: 70px;
+ }
+ #intro h1 span {
+   font-size: 4.5rem;
+   font-weight: 600;
+ }
 
-  #cta li {
-    display: inline-block;
-  }
-  #cta li:first-child {
-    margin-right: 30px;
-  }
+ #cta li {
+   display: inline-block;
+ }
+ #cta li:first-child {
+   margin-right: 30px;
+ }
 }
 /*
 Brand Marquee
  */
 .parallax {
   background: transparent;
-  padding: 40px 0;
+  padding: 45px 0;
   text-align: center;
 }
-.parallax p {
-  margin-top: 25px;
+.parallax .container {
+  padding-top: 25px;
+}
+.parallax h1 span{
+  display: block;
 }
 .marquee {
   display: flex;
@@ -874,16 +853,10 @@ img.marquee-brand:hover {
   transition: all .3s ease;
   cursor: pointer;
 }
-#marquee-h1 {
-  display: block;
-}
-#marquee-h1 h1 {
-  padding: 0;
-  margin: 0;
-}
+
 /* Displays h1 in a row (inline-block) */
 @media screen and (min-width:992px) {
-  .personable-eyewear {
+  .parallax h1 span{
     display: inline-block;
   }
 }
