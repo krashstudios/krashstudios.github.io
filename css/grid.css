@@ -45,7 +45,7 @@ Desktop Media Query - header
 */
 @media screen and (min-width: 1200px) {
   .header {
-    grid-template-columns: minmax(20px, auto) 580px 580px minmax(20px, auto);
+    grid-template-columns: d 580px 580px minmax(20px, auto);
   }
 }
 
@@ -356,4 +356,46 @@ Desktop Media Query - Aligns Form and Contact Info
   .call-us {
     justify-self: left;
   }
+}
+
+/* ==========================================================================
+   JavaScript Class - Page Styles
+   ========================================================================== */
+
+/* MacuHealth Page
+  ========================================================================== */
+
+/*
+Desktop Media Query - Aligns Form and Contact Info
+*/
+@media screen and (min-width:1200px) {
+
+  .product-grid {
+    display: grid;
+    grid-gap: 80px;
+    grid-template-areas:
+    "pl pr"
+    "pb pb";
+  }
+
+  .product-left {
+    grid-area: pl;
+  }
+  .product-right {
+    grid-area: pr;
+  }
+  .product-bottom {
+    display: grid;
+    grid-area: pb;
+    grid-template-areas:
+    "pc pca";
+  }
+  #product-checkout {
+    grid-area: pc;
+  }
+  #product-checkout-action {
+    grid-area: pca;
+    justify-self: right;
+  }
+
 }

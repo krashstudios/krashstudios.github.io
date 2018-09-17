@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <!-- <link rel="" sizes="" href="#" /> -->
+    <link rel="" sizes="" href="" />
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/reboot.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/type.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -17,12 +17,12 @@
     <!--[if lt IE 9]>
 	    <script src="js/html5shiv.js"></script>
     <![endif]-->
-    <title>Insurance &#8211; Eye Tech Eye Associates</title>
+    <title>Eye Tech Eye Associates &#8211; Shop MacuHealth</title>
   </head>
   <body>
     <div class="grid">
 
-      <header class="header non-sticky">
+      <header class="header">
         <!-- Logo also the Home Button -->
         <a href="index.html" id="header-logo" class="logo"><img src="img/logo-black.png" alt="eyetech Logo" /></a>
         <!-- Hamberger Menu Button -->
@@ -38,10 +38,10 @@
               </ul>
             </li>
             <!-- "Services Submenu" -->
-            <li><a href="#" class="active">Services</a>
+            <li><a href="#">Services</a>
               <ul class="dropdown">
                 <li><a href="eyecare.html">Eye Care</a></li>
-                <li><a href="insurance.html" class="active">Insurance</a></li>
+                <li><a href="insurance.html">Insurance</a></li>
               </ul>
             </li>
             <li><a href="contact.html">Contact</a></li>
@@ -50,96 +50,77 @@
       </header>
 
       <main>
-        <section class="insurance-vs">
-          <div class="container">
-            <h1>Insurance <span class="blue">vs.</span> Vision Insurance</h1>
-            <h3>A vision insurance policy is not the same as health insurance</h3>
-            <p>
-              Regular health insurance plans protect you against financial losses due to unexpected eye injuries or disease. Vision insurance, on the other hand, is a wellness benefit designed to provide routine eye care, prescription eyewear and other vision-related services at a reduced cost.
-            </p>
-            <p>
-              The cost of routine eye exams and prescription eyewear can be of real concern, especially for large families. In many cases, vision insurance can lower these annual expenses. At Eye Tech Eyes provide both  medical and routine eye care, we accept a number of insurance plans to help cover the cost depending on your  individual needs.
-            </p>
+        <div class="container wrapper">
+          <div class="product-grid">
+
+            <div class="product-left">
+              <div id="product-manufacturer">MacuHealth</div>
+              <div id="product-title">with LMZ3, 90ct</div>
+              <div id="product-price" price-data="79.99">
+                $79<span id="product-price-cents">99</span>
+              </div>
+              <div id="product-image">
+                <img src="img/macuhealth/macuhealth.jpg" alt="A bottle of MacuHealth with pills spread around the base of the bottle">
+              </div>
+            </div>
+
+            <div class="product-right">
+              <!-- Product Description -->
+              <div id="product-description">
+                MacuHealth with LMZ3 is a unique and patented formulation specifically designed to rebuild and maximize macular pigment over a lifetime.
+                Containing all three critical carotenoids in a patented 10:10:2 ratio consisting of Meso-Zeaxanthin (10mg), Lutein (10mg) and Zeaxanthin (2mg), MacuHealth with LMZ3 is proven through peer-reviewed research to quickly and effectively rebuild macular pigment.
+              </div>
+              <!-- Product Availability -->
+              <div id="product-available">
+                In Stock. <span id="product-subscription"><a href="#">Sign up for a monthy subscription</a></span>
+              </div>
+              <!-- Product Star Rating -->
+              <div id="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <div id="product-rating-details">(4.5 - <span class="rating-count">112</span> reviews)</div>
+              </div>
+              <!-- Product Quantity -->
+              <div id="product-quantity">
+                <label for="product-quantity-input" class="product-quantity-label">Quantity</label>
+
+                <div id="product-quantity-subtract">
+                  <i class="fas fa-chevron-left"></i>
+                </div>
+
+                <div>
+                  <input type="text" id="product-quantity-input" placeholder="0" value="0">
+                </div>
+
+                <div id="product-quantity-add">
+                  <i class="fas fa-chevron-right"></i>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-bottom">
+              <div id="product-checkout">
+                Total price
+                <div id="product-checkout-total">
+                  <i class="fas fa-dollar-sign"></i>
+                  <div id="product-checkout-total-amount">
+                    0.00
+                  </div>
+                </div>
+              </div>
+              <div id="product-checkout-action">
+                <a id="add-to-cart" href="#">Add to Cart</a>
+              </div>
+            </div>
+
+
+
           </div>
-        </section>
-
-        <div class="provider-logo">
-          <img src="img/insurance/VSP-logo-01.png" alt="Vision Care for Life logo" class="vsp-logo grayscale" />
-          <img src="img/insurance/vision-care-direct.png" alt="Vision Care Direct logo" class="vcd-logo grayscale" />
-          <img src="img/insurance/EyeMed-logo-2013.png" alt="EyeMed logo" class="em-logo grayscale" />
         </div>
-
-        <div class="provider-links container">
-          <h2>Insurances we currently accept</h2>
-          <div class="provider-info">
-            <div class="vision-plans container">
-              <h3><span class="blue">Vision</span> Insurance Plans</h3>
-              <ul>
-                <li><a href="https://www.vsp.com/" target="_blank">Vision Service Plan</a></li>
-                <li><a href="https://www.visioncaredirect.com/" target="_blank">Vision Care Direct</a></li>
-                <li><a href="#" target="_blank">Vision Care Plan</a></li>
-                <li><a href="http://portal.eyemedvisioncare.com/wps/portal/em/eyemed/members/!ut/p/b1/04_Sj9CPykssy0xPLMnMz0vMAfGjzOI9Lc2cLZwMHQ38Q51dDDz9gozNPAx8DA3cTYEKIoEKDHAARwNC-r30o9Jz8pOAVoXrR6EqNjCwMAAqdnIP8PYwNTDwNYUqwGOZn0d-bqp-QW5EZXBAuiIA0MIAbQ!!/dl4/d5/L2dBISEvZ0FBIS9nQSEh/" target="_blank">EyeMed</a></li>
-                <li><a href="https://www.sightcareaz.com/" target="_blank">Sight Care</a></li>
-              </ul>
-            </div>
-            <div class="medical-plans container">
-                <h3><span class="blue">Medical</span> Insurance Plans</h3>
-                <ul>
-                  <li><a href="https://www.azblue.com/individualsandfamilies" target="_blank">Blue Cross Blue Shield</a></li>
-                  <li><a href="https://www.bluekcma.com/" target="_blank">Blue Medicare Advantage</a></li>
-                  <li><a href="https://www.cigna.com/" target="_blank">Cigna PPO and OAP</a></li>
-                  <li><a href="https://www.healthnet.com/" target="_blank">Healthnet</a></li>
-                  <li><a href="https://www.humana.com/" target="_blank">Humana PPO</a></li>
-                  <li><a href="https://www.medicare.gov/" target="_blank">Medicare</a></li>
-                  <li><a href="https://www.tricare.mil/" target="_blank">Tricare</a></li>
-                  <li><a href="https://www.uhc.com/medicare/medicare-advantage-plans" target="_blank">UHC Medicare Advantage</a></li>
-                  <li><a href="https://www.uhc.com/" target="_blank">United Healthcare</a></li>
-                </ul>
-            </div>
-          </div>
-        </div>
-
-        <section class="insurance-help">
-          <h3>Don't see your insurance provider. We'd love to help!</h3>
-          <h3>Give us a call at 623-eye-tech</h3>
-        </section>
-
-        <div class="carecredit container">
-          <img src="img/insurance/CareCredit.png" alt="Care Credit logo" class="grayscale"/>
-          <section class="carecredit-apply">
-            <h3 class="blue">Another way to pay!</h3>
-            <h5>Apply for the CareCredit<span class="light"><small>&#8480;</small></span> credit card and receive an answer in minutes.</h5>
-            <button onclick="window.open('https://www.carecredit.com/doctor-locator/Eye-Exams-Eye-Glasses-in-PEORIA-AZ-85382/EYE-TECH-EYE-ASSOCIATES/','_blank')" class="btn" type="button">Apply Now</button>
-          </section>
-
-          <section class="financing container">
-            <div class="carecredit-coverage">
-              <h4>Eye care financing</h4>
-              <p>
-                Your eyes have what it takes to live your best life in full technicolor detail, whether it's reading a book, sightseeing in foreign lands or making sure you are in optimum health. Your CareCredit healthcare credit card can help you protect your eye health with a way to pay for the costs of vision care for you and your family, including:
-              </p>
-              <ul>
-                <li>Routine eye check-ups</li>
-                <li>New glasses</li>
-                <li>Sunglasses</li>
-                <li>Contact lenses</li>
-                <li>Dry eye treatments</li>
-                <li>Cataract procedures</li>
-                <li>Standard (single-focus) IOLs</li>
-                <li>Multifocal and toric IOLs</li>
-              </ul>
-            </div>
-
-            <div class="carecredit-video">
-              <video width="500" height="282" class="grayscale" controls poster="media/carecredit-poster.png">
-                <source src="media/CareCredit.mp4" type="video/mp4">
-                <p><em>To play this video clip, your browser needs to support HTML5.</em></p>
-              </video>
-            </div>
-          </section>
-
-        </div>
-
       </main>
 
       <footer class="footer">
@@ -163,7 +144,7 @@
           <div id="email" class="info-box">
             <i class="ion-ios-email-outline"></i>
             <h5>Email</h5>
-            <a href="contact.html"><small>Send us a message</small></a>
+            <a href="mailto:"><small>contact@eyetech.com</small></a>
           </div>
           <!-- Website -->
           <div id="website" class="info-box">
@@ -274,5 +255,36 @@
       </footer>
 
     </div>
+    <script>
+    // // Quantity of item
+    // var qty = document.getElementById("product-quantity-input").value();
+    //
+    // // Calculate new total when the quantity changes
+    // function calcPrice(qty) {
+    //   var price = document.getElementById("product-price").getAttribute("price-data");
+    //   var total = parseFloat((price * qty)).toFixed(2);
+    //   document.getElementById("product-checkout-total-amount").innerHTML(total);
+    // };
+
+    // Reduce quantity by 1 if clicked
+    document.getElementById("product-quantity-subtract").addEventListener("click", function() {
+      var reduce = document.getElementById("product-quantity-input").value --;
+      if(reduce < 0) reduce = 0;
+      document.getElementById("product-quantity-input").value(reduce);
+      // console.log(reduce);
+      // var newValue = parseInt(reduce) --;
+      // if(newValue < 0) newValue = 0;
+      // document.getElementById("product-quantity-input").value(newValue);
+    }, false);
+
+    // Increase quantity by 1 if clicked
+    document.getElementById("product-quantity-add").addEventListener("click", function() {
+      var increase = document.getElementById("product-quantity-input").value ++;
+      console.log(increase);
+
+    }, false);
+
+
+    </script>
   </body>
 </html>
