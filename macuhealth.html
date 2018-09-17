@@ -268,11 +268,12 @@
 
     // Reduce quantity by 1 if clicked
     document.getElementById("product-quantity-subtract").addEventListener("click", function() {
-      var reduce = document.getElementById("product-quantity-input").value --;
+      var reduce = document.getElementById("product-quantity-input").value;
       console.log(reduce);
       var newValue = parseInt(reduce) --;
       if(newValue < 0) newValue = 0;
       document.getElementById("product-quantity-input").value(newValue);
+      // calcPrice(newValue);
     }, false);
 
     // Increase quantity by 1 if clicked
