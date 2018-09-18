@@ -293,6 +293,14 @@
       // could not figure out how to get quantity to not go below 0
       calcPrice();
     }, false);
+
+    // Sets all form field values to defaults
+    function resetForm() {
+      document.getElementById("product-quantity-input").value = 0;
+    }
+
+    // Resets form when page is reloded
+    document.addEventListener("load", resetForm, false);
     </script>
   </body>
 </html>
