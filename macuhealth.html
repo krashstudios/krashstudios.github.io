@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Scripts -->
-    <!-- <script src=""></script> -->
+
     <!--[if lt IE 9]>
 	    <script src="js/html5shiv.js"></script>
     <![endif]-->
@@ -92,7 +92,7 @@
                 </div>
 
                 <div>
-                  <input type="text" id="product-quantity-input" placeholder="0" value="0">
+                  <input type="text" id="product-quantity-input" placeholder="0" value="0" onchange="calcPrice()">
                 </div>
 
                 <div id="product-quantity-add">
@@ -256,33 +256,33 @@
 
     </div>
     <script>
-    // // Quantity of item
-    // var qty = document.getElementById("product-quantity-input").value();
-    //
-    // // Calculate new total when the quantity changes
-    // function calcPrice(qty) {
-    //   var price = document.getElementById("product-price").getAttribute("price-data");
-    //   var total = parseFloat((price * qty)).toFixed(2);
-    //   document.getElementById("product-checkout-total-amount").innerHTML(total);
-    // };
 
-    // Reduce quantity by 1 if clicked
-    document.getElementById("product-quantity-subtract").addEventListener("click", function() {
-      var reduce = document.getElementById("product-quantity-input").value;
-      console.log(reduce);
-      var newValue = parseInt(reduce) --;
-      if(newValue < 0) newValue = 0;
-      document.getElementById("product-quantity-input").value(newValue);
-      // calcPrice(newValue);
-    }, false);
+    // Initial Quantity value
+    var input = 0;
+
+    // Function to increase total amount by quantity of items
+    function calcPrice() {
+      // Item Variable
+      var price = document.getElementById("product-price").getAttribute("price-data");
+      // Get order quantity from text field
+      input = document.getElementById("product-quantity-input").value;
+      // Multiply quantity by item price
+      document.getElementById("product-checkout-total-amount").innerHTML = (input * price).toFixed(2);
+    }
 
     // Increase quantity by 1 if clicked
     document.getElementById("product-quantity-add").addEventListener("click", function() {
       var increase = document.getElementById("product-quantity-input").value ++;
       console.log(increase);
-
+      calcPrice();
     }, false);
 
+    // Reduce quantity by 1 if clicked
+    document.getElementById("product-quantity-subtract").addEventListener("click", function() {
+      var reduce = document.getElementById("product-quantity-input").value --;
+      console.log(reduce);
+      calcPrice();
+    }, false);
 
     </script>
   </body>
