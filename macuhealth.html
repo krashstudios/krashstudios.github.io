@@ -92,7 +92,7 @@
               <!-- Product Quantity -->
               <div id="product-quantity">
                 <label for="product-quantity-input" class="product-quantity-label">Quantity</label>
-
+                <!-- This js button reduces the quantity of input -->
                 <div id="product-quantity-subtract">
                   <i class="fas fa-chevron-left"></i>
                 </div>
@@ -101,7 +101,7 @@
                   <!-- When value of input is changed, calcPrice() function is called -->
                   <input type="text" id="product-quantity-input" placeholder="0" value="0" onchange="calcPrice()">
                 </div>
-
+                <!-- This js button increase the quantity input -->
                 <div id="product-quantity-add">
                   <i class="fas fa-chevron-right"></i>
                 </div>
@@ -114,6 +114,7 @@
                 Total price
                 <div id="product-checkout-total">
                   <i class="fas fa-dollar-sign"></i>
+                  <!-- calcPrice() changes this value based on quantity input -->
                   <div id="product-checkout-total-amount">
                     0.00
                   </div>
