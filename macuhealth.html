@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--
+    CIS166AA: Chapter 2 Case Project
+    Author: Matthew Tanner
+    Date: 09/17/2018
+
+    -->
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,6 +98,7 @@
                 </div>
 
                 <div>
+                  <!-- When value of input is changed, calcPrice() function is called -->
                   <input type="text" id="product-quantity-input" placeholder="0" value="0" onchange="calcPrice()">
                 </div>
 
@@ -256,6 +263,9 @@
 
     </div>
     <script>
+    /*
+        This script takes the value of the form input (quantity of items) and multiplys it by the items price, outputting the total price.
+    */
 
     // Initial Quantity value
     var input = 0;
@@ -273,17 +283,15 @@
     // Increase quantity by 1 if clicked
     document.getElementById("product-quantity-add").addEventListener("click", function() {
       var increase = document.getElementById("product-quantity-input").value ++;
-      console.log(increase);
       calcPrice();
     }, false);
 
     // Reduce quantity by 1 if clicked
     document.getElementById("product-quantity-subtract").addEventListener("click", function() {
       var reduce = document.getElementById("product-quantity-input").value --;
-      console.log(reduce);
+      // could not figure out how to get quantity to not go below 0
       calcPrice();
     }, false);
-
     </script>
   </body>
 </html>
