@@ -5,6 +5,7 @@
 
 
 
+
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -1316,8 +1317,16 @@ Desktop Media Query - .Contact-hours
 
   .call-us {
     padding-top: 0;
-    padding-left: 53px;
+    padding-left: 30px;
   }
+}
+
+.open {
+  color: rgb(39,174,96);
+}
+
+.closed {
+  color: rgba(231, 76, 60, 0.85);
 }
 
 #map {
@@ -1432,6 +1441,7 @@ i.fa-star-half-alt {
 #product-checkout-total * {
   display: inline-block;
 }
+
 
 
 
