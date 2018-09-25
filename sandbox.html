@@ -51,11 +51,14 @@
           clinicHours.className = "open";
         }
 
+        else if ((dayOfWeek == 5) && hour >= 7 && hour <= 15) {
+          clinicHours.innerHTML = "Open";
+          clinicHours.className = "open";
+        }
+
         else {
-          if ((dayOfWeek == 5) && hour >= 7 && hour <= 15) {
-            clinicHours.innerHTML = "Open";
-            clinicHours.className = "open";
-          }
+          clinicHours.innerHTML = 'Closed';
+          clinicHours.className = 'closed';
         }
       };
       // calls checkTime() at specified interval - https://www.w3schools.com/jsref/met_win_setinterval.asp
