@@ -99,7 +99,7 @@
               </div>
 
               <div class="submit-button">
-                <button id="submit-btn" class="btn" type="submit" value="submit">submit</button>
+                <button id="submit-btn" class="btn" type="submit" value="submit" onclick="validateForm()">submit</button>
               </div>
 
             </form>
@@ -425,6 +425,7 @@
 
     </div>
     <script>
+// Chapter 3 Case Project
     // Reference: https://www.w3schools.com/jsref/jsref_getday.asp
     var now = new Date();
 
@@ -463,6 +464,99 @@
     // calls checkTime() at specified interval - https://www.w3schools.com/jsref/met_win_setinterval.asp
     setInterval(checkTime, 1000);
     checkTime();
+
+// Chapter 4 Case Project
+/*
+Could not figure out how to implement RegExp to validate emailEntry
+I added an else if with a RegExp to validateEmail() but it was always called no mattter what I tryed
+or viewed in the console
+*/
+      function validateName() // function alerts user if name field is empty
+      {
+        try
+        {
+        var nameEntry = document.getElementById('name');
+        if (nameEntry.value === '') // checks to see if value is empty
+        {
+        throw 'Please enter your first and last name.';
+        }
+        }
+
+        catch(nameError)
+        {
+        window.alert(nameError)
+        return false;
+        }
+
+        finally
+        {
+        nameValid = true;
+        }
+        return true;
+      }
+
+
+      function validateEmail() // function alerts user if email field is empty
+      {
+
+        try
+        {
+        var emailEntry = document.getElementById('email');
+
+        if (emailEntry.value === '') // checks to see if value is empty
+        {
+        throw 'Please provide an email address.';
+        }
+
+        }
+
+        catch(emailError)
+        {
+        window.alert(emailError)
+        return false;
+        }
+
+        finally
+        {
+        emailValid = true;
+        }
+        return true;
+      }
+
+      function validatePhone() // function alerts user if phone # field is empty
+      {
+        try
+        {
+        var phoneEntry = document.getElementById('phone');
+
+        if (phoneEntry.value === '') // checks to see if value is empty
+        {
+        throw 'Please provide a phone number.';
+        }
+
+        }
+
+        catch(phoneError)
+        {
+        window.alert(phoneError)
+        return false;
+        }
+
+        finally
+        {
+        phoneValid = true;
+        }
+        return true;
+      }
+
+
+      function validateForm() // function runs when form is submitted
+      {
+        validateName();
+        validateEmail();
+        validatePhone();
+      }
+
     </script>
   </body>
 </html>
