@@ -52,31 +52,31 @@
       <main class="container wrapper">
         <h1>Web security</h1>
         <section>
-          <h2>geolocation</h2>
+          <h2>geolocation</h2><span id="location"></span>
           <p>
             Geolocation API allows a user to provide their location if they desire with permission to report locations information. Longitude and latitude can be acquired and is acurrate with in a few feet.
           </p>
         </section>
         <section>
-          <h2>platform</h2>
+          <h2>platform</h2><span id="platform"></span>
           <p>
             This property returns which platform the browser is compiled for, such as Windows or mac OS in the form of Win32 or MacIntel.
           </p>
         </section>
         <section>
-          <h2>online</h2>
+          <h2>online</h2><span id="online"></span>
           <p>
              The online property returns a value that can tell wheather the browser is online or offline
           </p>
         </section>
         <section>
-          <h2>appName</h2>
+          <h2>appName</h2><span id="appName"></span>
           <p>
             The appName property returns the name of the browser that is being used.
           </p>
         </section>
         <section>
-          <h2>userAgent</h2>
+          <h2>userAgent</h2><span id="userAgent"></span>
           <p>
             The userAgent property returns the value of the user-agent header sent by the browser to the server.
 
@@ -84,7 +84,7 @@
           </p>
         </section>
         <section>
-          <h2>appVersion</h2>
+          <h2>appVersion</h2><span id="appVersion"></span>
           <p>
             The appVersion property returns the version information of the browser.
           </p>
@@ -251,4 +251,22 @@
 
     </div>
   </body>
+  <script>
+  'use strict';
+  // variables for user information
+    var geolocation = navigator.geolocation;
+    var platform = navigator.platform;
+    var online = navigator.onLine;
+    var appName = navigator.appName;
+    var userAgent = navigator.userAgent;
+    var appVersion = navigator.appVersion;
+
+    //
+    document.getElementById('location').innerHTML = geolocation;
+    document.getElementById('platform').innerHTML = platform;
+    document.getElementById('online').innerHTML = online;
+    document.getElementById('appName').innerHTML = appName;
+    document.getElementById('userAgent').innerHTML = userAgent;
+    document.getElementById('appVersion').innerHTML = appVersion;
+  </script>
 </html>
