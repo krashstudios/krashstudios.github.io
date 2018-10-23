@@ -570,7 +570,6 @@
 
       /* global variables */
       var formValidity = true;
-      var commentBox = document.getElementById("message"); // message text field
 
       /* validate required fields */
       function validateRequired() {
@@ -579,6 +578,7 @@
       var elementCount = inputElements.length;
       var requiredValidity = true;
       var currentElement;
+
       try {
       for (var i = 0; i < elementCount; i++) {
       // validate all input elements in form
@@ -590,8 +590,9 @@
         currentElement.style.background = 'rgb(247,247,247)';
       }
       }
+
+      // validate select element
       currentElement = document.querySelector('select');
-      // validate state select element
       if (currentElement.selectedIndex === -1) {
       currentElement.style.border = '1px solid red';
       requiredValidity = false;
@@ -599,12 +600,14 @@
       currentElement.style.border = '';
       }
 
-      // validate textarea value
-		  if (!commentBox.value) {
-			fieldsetValidity = false;
-			commentBox.style.border = "1px solid red";
-			commentBox.focus();
-		  }
+      // validate textarea element
+      currentElement = document.querySelector('textarea');
+      if (currentElement.value === '') {
+      currentElement.style.background = 'rgb(255,233,233)';
+      requiredValidity = false;
+      } else {
+      currentElement.style.background = 'rgb(247,247,247)';
+      }
 
       if (requiredValidity === false) {
       throw 'Please complete all fields.';
