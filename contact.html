@@ -102,7 +102,7 @@
               <div id="errorText" class="form-field"></div>
 
               <div class="form-field comment-box">
-                <label class="label">message</label>
+                <label class="label">message *</label>
                 <textarea name="comment-box" id="message"></textarea>
               </div>
 
@@ -594,7 +594,7 @@
       // validate select element
       currentElement = document.querySelector('select');
       if (currentElement.selectedIndex === -1) {
-      currentElement.style.border = '1px solid red';
+      currentElement.style.border = '1px solid tomato';
       requiredValidity = false;
       } else {
       currentElement.style.border = '';
