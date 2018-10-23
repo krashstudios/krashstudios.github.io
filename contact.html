@@ -570,6 +570,7 @@
 
       /* global variables */
       var formValidity = true;
+      var commentBox = document.getElementById("message"); // message text field
 
       /* validate required fields */
       function validateRequired() {
@@ -597,6 +598,13 @@
       } else {
       currentElement.style.border = '';
       }
+
+      // validate textarea value
+		  if (!commentBox.value) {
+			fieldsetValidity = false;
+			commentBox.style.border = "1px solid red";
+			commentBox.focus();
+		  }
 
       if (requiredValidity === false) {
       throw 'Please complete all fields.';
