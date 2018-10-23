@@ -66,11 +66,16 @@
           <!-- Contact Form -->
           <div class="message-form">
             <h2>message</h2>
-            <form action="#" id="contact_form" class="contact-form contact-grid">
+            <form action="#" id="contact_form" class="contact-form contact-grid" novalidate="novalidate">
 
               <div class="form-field name">
-                <label class="label" for="name">full name *</label>
-                <input id="name" type="text" required>
+                <label class="label" for="fname">first name *</label>
+                <input id="fname" type="text" required>
+              </div>
+
+              <div class="form-field name">
+                <label class="label" for="lname">last name *</label>
+                <input id="lname" type="text" required>
               </div>
 
               <div class="form-field email">
@@ -88,10 +93,13 @@
                 <select name="subject" form="contact_form" required>
                   <option value="appointment" selected>Appointment</option>
                   <option value="cancellation">Cancellation</option>
+                  <option value="testimonial">Testimonial</option>
                   <option value="order">Order</option>
                   <option value="other">Other</option>
                 </select>
               </div>
+
+              <div id="errorText" class="form-field"></div>
 
               <div class="form-field comment-box">
                 <label class="label">message</label>
@@ -465,97 +473,192 @@
     setInterval(checkTime, 1000);
     checkTime();
 
-// Chapter 4 Case Project
-/*
-Could not figure out how to implement RegExp to validate emailEntry
-I added an else if with a RegExp to validateEmail() but it was always called no mattter what I tryed
-or viewed in the console
-*/
-      function validateName() // function alerts user if name field is empty
-      {
-        try
-        {
-        var nameEntry = document.getElementById('name');
-        if (nameEntry.value === '') // checks to see if value is empty
-        {
-        throw 'Please enter your first and last name.';
-        }
-        }
+// // Chapter 4 Case Project
+// /*
+// Could not figure out how to implement RegExp to validate emailEntry
+// I added an else if with a RegExp to validateEmail() but it was always called no mattter what I tryed
+// or viewed in the console
+// */
+//       function validateName() // function alerts user if name field is empty
+//       {
+//         try
+//         {
+//         var nameEntry = document.getElementById('name');
+//         if (nameEntry.value === '') // checks to see if value is empty
+//         {
+//         throw 'Please enter your first and last name.';
+//         }
+//         }
+//
+//         catch(nameError)
+//         {
+//         window.alert(nameError)
+//         return false;
+//         }
+//
+//         finally
+//         {
+//         nameValid = true;
+//         }
+//         return true;
+//       }
+//
+//
+//       function validateEmail() // function alerts user if email field is empty
+//       {
+//
+//         try
+//         {
+//         var emailEntry = document.getElementById('email');
+//
+//         if (emailEntry.value === '') // checks to see if value is empty
+//         {
+//         throw 'Please provide an email address.';
+//         }
+//
+//         }
+//
+//         catch(emailError)
+//         {
+//         window.alert(emailError)
+//         return false;
+//         }
+//
+//         finally
+//         {
+//         emailValid = true;
+//         }
+//         return true;
+//       }
+//
+//       function validatePhone() // function alerts user if phone # field is empty
+//       {
+//         try
+//         {
+//         var phoneEntry = document.getElementById('phone');
+//
+//         if (phoneEntry.value === '') // checks to see if value is empty
+//         {
+//         throw 'Please provide a phone number.';
+//         }
+//
+//         }
+//
+//         catch(phoneError)
+//         {
+//         window.alert(phoneError)
+//         return false;
+//         }
+//
+//         finally
+//         {
+//         phoneValid = true;
+//         }
+//         return true;
+//       }
+//
+//
+//       function validateForm() // function runs when form is submitted
+//       {
+//         validateName();
+//         validateEmail();
+//         validatePhone();
+//       }
 
-        catch(nameError)
-        {
-        window.alert(nameError)
-        return false;
-        }
+/* Chapter 6 case project */
+      'use strict'; // interpret document contents in JavaScript strict mode
 
-        finally
-        {
-        nameValid = true;
-        }
-        return true;
+      /* global variables */
+      var formValidity = true;
+
+      /* validate required fields */
+      function validateRequired() {
+      var inputElements = document.querySelectorAll('div.form-field input');
+      var errorDiv = document.getElementById('errorText');
+      var elementCount = inputElements.length;
+      var requiredValidity = true;
+      var currentElement;
+      try {
+      for (var i = 0; i < elementCount; i++) {
+      // validate all input elements in form
+      currentElement = inputElements[i];
+      if (currentElement.value === '') {
+        currentElement.style.background = 'rgb(255,233,233)';
+        requiredValidity = false;
+      } else {
+        currentElement.style.background = 'rgb(247,247,247)';
+      }
+      }
+      currentElement = document.querySelector('select');
+      // validate state select element
+      if (currentElement.selectedIndex === -1) {
+      currentElement.style.border = '1px solid red';
+      requiredValidity = false;
+      } else {
+      currentElement.style.border = '';
       }
 
-
-      function validateEmail() // function alerts user if email field is empty
-      {
-
-        try
-        {
-        var emailEntry = document.getElementById('email');
-
-        if (emailEntry.value === '') // checks to see if value is empty
-        {
-        throw 'Please provide an email address.';
-        }
-
-        }
-
-        catch(emailError)
-        {
-        window.alert(emailError)
-        return false;
-        }
-
-        finally
-        {
-        emailValid = true;
-        }
-        return true;
+      if (requiredValidity === false) {
+      throw 'Please complete all fields.';
+      }
+      errorDiv.style.display = 'none';
+      errorDiv.innerHTML = '';
       }
 
-      function validatePhone() // function alerts user if phone # field is empty
-      {
-        try
-        {
-        var phoneEntry = document.getElementById('phone');
-
-        if (phoneEntry.value === '') // checks to see if value is empty
-        {
-        throw 'Please provide a phone number.';
-        }
-
-        }
-
-        catch(phoneError)
-        {
-        window.alert(phoneError)
-        return false;
-        }
-
-        finally
-        {
-        phoneValid = true;
-        }
-        return true;
+      catch(msg) {
+      errorDiv.style.display = 'block';
+      errorDiv.innerHTML = msg;
+      formValidity = false;
+      }
       }
 
-
-      function validateForm() // function runs when form is submitted
-      {
-        validateName();
-        validateEmail();
-        validatePhone();
+      /* validate form */
+      function validateForm(evt) {
+      if (evt.preventDefault) {
+      evt.preventDefault(); // prevent form from submitting
+      } else {
+      evt.returnValue = false; // prevent form from submitting in IE8
       }
+      formValidity = true; // reset value for revalidation
+
+      validateRequired();
+
+      if (formValidity === true) {
+      document.getElementsByTagName('form')[0].submit();
+      }
+      }
+
+      /* remove default values and formatting from subject selection list */
+      function removeSelctedDefaults() {
+      var emptyBoxes = document.getElementsByTagName('select');
+      for (var i = 0; i < emptyBoxes.length; i++) {
+      emptyBoxes[i].selectedIndex = -1;
+      }
+      }
+
+      /* create event listeners */
+      function createEventListeners() {
+      var form = document.getElementsByTagName('form')[0];
+      if (form.addEventListener) {
+      form.addEventListener('submit', validateForm, false);
+      } else if (form.attachEvent) {
+      form.attachEvent('onsubmit', validateForm);
+      }
+      }
+
+      /* run initial form configuration functions */
+      function setUpPage() {
+      removeSelctedDefaults();
+      createEventListeners();
+      }
+
+      /* calls setUpPage() function when page finishes loading */
+      if (window.addEventListener) {
+      window.addEventListener('load', setUpPage, false);
+      } else if (window.attachEvent) {
+      window.attachEvent('onload', setUpPage);
+      }
+
 
     </script>
   </body>
