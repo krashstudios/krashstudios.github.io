@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="" sizes="" href="" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reboot.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/type.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/chapter8.css">
+    <!-- Scripts -->
+    <!-- <script src=""></script> -->
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <title></title>
+  </head>
+  <body>
+    <div class="grid">
+
+      <header class="header">
+        <!-- Logo also the Home Button -->
+        <a href="index.html" id="header-logo" class="logo"><img src="img/logo-black.png" alt="eyetech Logo" /></a>
+        <!-- Hamberger Menu Button -->
+        <input class="menu-btn" type="checkbox" id="menu-btn"/>
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <nav class="nav">
+          <ul>
+            <!-- "About Submenu" -->
+            <li><a href="#">About</a>
+              <ul class="dropdown">
+                <li><a href="ourpractice.html">Our Practice</a></li>
+                <li><a href="technology.html">Technology</a></li>
+              </ul>
+            </li>
+            <!-- "Services Submenu" -->
+            <li><a href="#">Services</a>
+              <ul class="dropdown">
+                <li><a href="eyecare.html">Eye Care</a></li>
+                <li><a href="insurance.html">Insurance</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="wrapper container">
+        <article>
+           <h2>Create An Account</h2>
+           <form id="account-form">
+              <fieldset class="text">
+                 <label for="uname">Username</label>
+                 <input type="text" id="uname" />
+                 <p id="usernameError" class="errorMsg"></p>
+                 <label for="pw1">Password</label>
+                 <input type="password" id="pw1" />
+                 <label for="pw2">Password (confirm)</label>
+                 <input type="password" id="pw2" />
+                 <p id="passwordError" class="errorMsg"></p>
+                 <label for="email">Email Address</label>
+                 <input type="email" id="emailbox" />
+                 <p id="emailError" class="errorMsg"></p>
+              </fieldset>
+              <fieldset class="checks">
+                 <legend><span>Newsletter Intrests</span></legend>
+
+                 <input type="checkbox" id="deals" value="NEW Deals on frames/lenses" name="newsletters" />
+                 <label for="deals" id="dealsLabel">NEW Deals on frames/lenses</label>
+
+                 <input type="checkbox" id="eyehealth" value="Latest on eye health" name="newsletters" />
+                 <label for="eyehealth" id="eyehealthLabel">Latest on eye health</label>
+
+                 <input type="checkbox" id="tech" value="Advancments in eye technology" name="newsletters" />
+                 <label for="tech" id="techLabel">Advancments in eye technology</label>
+
+                 <input type="checkbox" id="blogexerts" value="O.D. blog exerts" name="newsletters" />
+                 <label for="blogexerts" id="blogexertsLabel">O.D. blog exerts</label>
+
+                 <input type="checkbox" id="updates" value="EyeTech updates" name="newsletters" />
+                 <label for="updates" id="updatesLabel">EyeTech updates</label>
+
+              </fieldset>
+              <input type="button" class="btn" id="createBtn" value="Create Account" />
+           </form>
+           <section id="profile">
+              <h3>Profile</h3>
+              <div id="usernameSection">
+                 <h4>Username</h4>
+                 <p id="profileUsername"></p>
+              </div>
+              <div id="emailSection">
+                 <h4>Email address</h4>
+                 <p id="profileEmail"></p>
+              </div>
+              <div id="newslettersSection">
+                 <h4>Newsletter Intrests</h4>
+                 <ul id="profilenewsletters"></ul>
+              </div>
+           </section>
+        </article>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <!-- Footer Contact Info -->
+        <div class="contact-info">
+          <!-- Address -->
+          <div id="address" class="info-box">
+            <i class="ion-ios-location-outline"></i>
+            <h5>Address</h5>
+              <address>
+                <a href="https://www.google.com/maps/place/18431+N+91st+Ave+%231,+Peoria,+AZ+85382/@33.6510664,-112.2565643,17z/data=!3m1!4b1!4m5!3m4!1s0x872b42bbbc0027c9:0xd8ed8ce4322ca9d3!8m2!3d33.6510664!4d-112.2543756" target="_blank"><small>18431 N 91st Avenue, Ste 1 <br/>Peoria, AZ 85382</small></a>
+              </address>
+          </div>
+          <!-- Phone Number -->
+          <div id="phone" class="info-box">
+            <i class="ion-iphone"></i>
+            <h5>Phone</h5>
+            <a href="tel:623-393-8324"><small>623-eye-tech</small></a>
+          </div>
+          <!-- Email -->
+          <div id="email" class="info-box">
+            <i class="ion-ios-email-outline"></i>
+            <h5>Email</h5>
+            <a href="mailto:"><small>contact@eyetech.com</small></a>
+          </div>
+          <!-- Website -->
+          <div id="website" class="info-box">
+            <i class="ion-android-globe"></i>
+            <h5>Website</h5>
+            <a href="index.html"><small>www.eyetecheyes.com</small></a>
+          </div>
+        </div>
+        <!-- Footer Content - Left/Center/Right -->
+        <div class="footer-content">
+          <!-- Footer Left Side-->
+          <div class="footer-left">
+            <!-- Latest tweets -->
+            <!--
+            Twitter Widget Parameters:
+            https://developer.twitter.com/en/docs/twitter-for-websites/timelines/guides/parameter-reference
+            -->
+            <h5>Latest Tweets</h5>
+            <a class="twitter-timeline" data-height="380" data-theme="dark" data-link-color="#3DC5DF" data-chrome="noheader, nofooter, noborders, transparent, noscrollbar" href="https://twitter.com/EyeTechEyes?ref_src=twsrc%5Etfw">Tweets by EyeTechEyes</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <!-- Foorter Center -->
+          <div class="footer-center">
+            <!-- Logo, Also the Home Button -->
+            <a href="index.html" id="footer-logo" class="logo"><img src="img/logo-white.png" alt="white eyetech logo" /></a>
+            <p>We work in a friendly and efficient environment using the latest technologies while sharing our expertise to make a diagnosis and implement cutting-edge therapies.</p>
+            <!-- Social Icons -->
+            <ul class="social-icons">
+              <!-- facebook Font Awesome Icon -->
+              <li class="facebook">
+                <a href="https://www.facebook.com/search/top/?q=eyetecheyes" target="_blank">
+                  <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x fb"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x"></i>
+                  </span>
+                </a>
+              </li>
+              <!-- twitter Font Awesome Icon -->
+              <li class="twitter">
+                <a href="https://twitter.com/EyeTechEyes?lang=en" target="_blank">
+                  <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x tw"></i>
+                    <i class="fab fa-twitter fa-stack-1x"></i>
+                  </span>
+                </a>
+              </li>
+              <!-- linkedin Font Awesome Icon -->
+              <li class="linkedin">
+                <a href="https://www.linkedin.com/company/eye-tech-eye-associates/" target="_blank">
+                  <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x in"></i>
+                    <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <!-- Newsletter Signup -->
+            <div class="newsletter">
+              <h5>register for our newsletter</h5>
+              <form>
+                <input type="email" required>
+                <button class="btn-3" type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          <!-- Footer Right Side -->
+          <div class="footer-right">
+            <!-- Patient Guide -->
+            <div class="patient-guide">
+              <h5>patient guide</h5>
+              <ul>
+                <li><a href="http://eyetech.myclstore.com/" target="_blank">Order contacts</a></li>
+                <li><a href="contact.html">Schedule an appointment</a></li>
+                <li><a href="content/Patient-Registration-2015-fillable.pdf" target="_blank">New patient forms</a></li>
+                <li><a href="insurance.html">Insurance</a></li>
+                <li><a href="eyecare.html">Eye care & diagnosis</a></li>
+              </ul>
+            </div>
+            <!-- Office Hours -->
+            <div class="office-hours">
+              <h5>office hours</h5>
+              <p>
+                Mon & Tue
+                <span>8:00am to 5:00pm</span>
+              </p>
+              <p>
+                Wed
+                <span>9:00am to 6:00pm</span>
+              </p>
+              <p>
+                Thu
+                <span>8:00am to 5:00pm</span>
+              </p>
+              <p>
+                Fri
+                <span>7:00am to 3:00pm</span>
+              </p>
+              <p>
+                Sat & Sun
+                <span>Closed</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="rights">
+          <p>&copy; 2015-2018 Eye Tech Eye Associates. All Rights Reserved</p>
+        </div>
+      </footer>
+
+    </div>
+    <script src="js/chapter8.js"></script>
+  </body>
+</html>
