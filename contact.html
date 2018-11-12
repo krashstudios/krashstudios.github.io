@@ -570,18 +570,23 @@
 
       /* global variables */
       var formValidity = true;
+      var errorDiv = document.getElementById('errorText');
 
       /* validate required fields */
-      function validateRequired() {
+    function validateRequired() {
       var inputElements = document.querySelectorAll('div.form-field input');
-      var errorDiv = document.getElementById('errorText');
       var elementCount = inputElements.length;
       var requiredValidity = true;
       var currentElement;
+      // // regexp
+      // var re = /^[a-zA-Z '-.,]*$/;
+
+
+      // var exclude = /[*|\":<>[\]{}`\\();@&$]/;
 
       try {
-      for (var i = 0; i < elementCount; i++) {
       // validate all input elements in form
+      for (var i = 0; i < elementCount; i++) {
       currentElement = inputElements[i];
       if (currentElement.value === '') {
         currentElement.style.background = 'rgb(255,233,233)';
@@ -610,7 +615,7 @@
       }
 
       if (requiredValidity === false) {
-      throw 'Please complete all fields.';
+        throw 'Please complete all fields.'
       }
       errorDiv.style.display = 'none';
       errorDiv.innerHTML = '';
@@ -623,6 +628,67 @@
       }
       }
 
+      /* validate textfield RegExp */
+      function validateTextFields() {
+        var inputElements = document.querySelectorAll('div.form-field input[type=text]');
+        var elementCount = inputElements.length;
+        var currentElement;
+
+        try {
+          for (var i = 0; i < elementCount; i++) {
+            currentElement = inputElements[i];
+            if (/^[a-zA-Z '-.,]*$/.test(currentElement.value) === false) {
+              currentElement.style.background = 'rgb(255,233,233)';
+              throw 'You can only enter letters, spaces, apostrophes, or dashes for a name';
+            }
+          }
+        }
+
+        catch(msg) {
+        errorDiv.style.display = 'block';
+        errorDiv.innerHTML = msg;
+        formValidity = false;
+        }
+      }
+
+
+      /* validate email RegExp */
+      function validateEmail() {
+        var emailInput = document.getElementById('email');
+
+        try {
+          if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailInput.value) === false) {
+            emailInput.style.background = 'rgb(255,233,233)';
+            throw 'Please enter a valid email address.';
+          }
+
+        }
+
+        catch(msg) {
+          errorDiv.style.display = 'block';
+          errorDiv.innerHTML = msg;
+          formValidity = false;
+        }
+      }
+
+      /* validate phone RegExp*/
+      function validatePhone() {
+        var phoneInput = document.getElementById('phone');
+
+        try {
+          if(/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/.test(phoneInput.value) === false) {
+            phoneInput.style.background = 'rgb(255,233,233)';
+            throw 'Plese enter a valid phone number.';
+          }
+        }
+
+        catch(msg) {
+          errorDiv.style.display = 'block';
+          errorDiv.innerHTML = msg;
+          formValidity = false;
+        }
+      }
+
       /* validate form */
       function validateForm(evt) {
       if (evt.preventDefault) {
@@ -633,6 +699,9 @@
       formValidity = true; // reset value for revalidation
 
       validateRequired();
+      validateEmail();
+      validatePhone();
+      validateTextFields();
 
       if (formValidity === true) {
       document.getElementsByTagName('form')[0].submit();
