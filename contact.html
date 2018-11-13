@@ -578,11 +578,6 @@
       var elementCount = inputElements.length;
       var requiredValidity = true;
       var currentElement;
-      // // regexp
-      // var re = /^[a-zA-Z '-.,]*$/;
-
-
-      // var exclude = /[*|\":<>[\]{}`\\();@&$]/;
 
       try {
       // validate all input elements in form
@@ -689,6 +684,24 @@
         }
       }
 
+      /* exclude xss entries in message input*/
+      function validateMessage() {
+        var messageInput = document.getElementById('message');
+
+        try {
+          if(/[*|\":<>[\]{}`\\();@&$]/.test(messageInput.value) === true) {
+            messageInput.style.background = 'rgb(255,233,233)';
+            throw 'NOPE, cant enter code here';
+          }
+        }
+
+        catch(msg) {
+          errorDiv.style.display = 'block';
+          errorDiv.innerHTML = msg;
+          formValidity = false;
+        }
+      }
+
       /* validate form */
       function validateForm(evt) {
       if (evt.preventDefault) {
@@ -702,6 +715,7 @@
       validateEmail();
       validatePhone();
       validateTextFields();
+      validateMessage();
 
       if (formValidity === true) {
       document.getElementsByTagName('form')[0].submit();
