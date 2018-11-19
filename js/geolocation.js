@@ -11,7 +11,7 @@ function geoLocation() {
     var longitude = position.coords.longitude;
     var altitude = position.coords.altitude;
 
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '° <br/>Altitude is ' + altitude + '</p>';
+    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '° <br/>Altitude is ' + altitude + '°</p>';
 
   }
 
