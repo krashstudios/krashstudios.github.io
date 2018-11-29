@@ -56,6 +56,13 @@ function getWeather(evt) {
      httpRequest.open('get','solar.php?' + 'lat=' + latitude + '&lng=' + longitude, true);
      httpRequest.send(null);
    }
+   httpRequest.onreadystatechange = fillWeather;
+}
+
+function gillWeather() {
+  if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+    weatherReport = JSON.parse(httpRequest.responseText);
+  }
 }
 
 var locations = document.querySelectorAll("section ul li");
