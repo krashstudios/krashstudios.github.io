@@ -49,19 +49,35 @@ function getWeather(evt) {
       longitude = -73.7120832;
    }
 
-   if (!httpRequest) {
-     httpRequest = getRequestObject();
+   // if (!httpRequest) {
+   //   httpRequest = getRequestObject();
+   //
+   //   httpRequest.abort();
+   //   httpRequest.open('get','solar.php?' + 'lat=' + latitude + '&lng=' + longitude, true);
+   //   httpRequest.send(null);
+   // }
+   // httpRequest.onreadystatechange = fillWeather;
+   var url = 'https://api.forecast.io/forecast/8c59eaa35cc09f8f8e8c37940bf23e3d/' + latitude + ',' + longitude + '?callback=getForecast';
 
-     httpRequest.abort();
-     httpRequest.open('get','solar.php?' + 'lat=' + latitude + '&lng=' + longitude, true);
-     httpRequest.send(null);
-   }
-   httpRequest.onreadystatechange = fillWeather;
+   var script = document.createElement('script');
+   script.id = 'jsonp';
+   script.src = url;
+   document.body.appendChild(script);
 }
 
-function fillWeather() {
-  if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-    weatherReport = JSON.parse(httpRequest.responseText);
+function getForecast(forecast) {
+  try {
+    fillWeather(forecast);
+  }
+  finally {
+    var script = document.getElementById('jsonp');
+    script.parentNode.removeChild(script);
+  }
+}
+
+function fillWeather(weatherReport) {
+  // if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+  //   weatherReport = JSON.parse(httpRequest.responseText);
 
     var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     var dateValue = new Date(weatherReport.daily.data[0].time);
@@ -92,7 +108,7 @@ function fillWeather() {
        else if (sun <= 10) {secondCell.style.color = 'rgb(255,247,230)';}
      secondCell.style.fontSize = '2.5em';
      thirdCell.innerHTML = sun + '%';
-  }
+  // }
   document.querySelector('section.week table caption').style.display = 'block';
   document.querySelector('section.week table').style.display = 'inline-block';
   document.querySelector('section.week p.credit').style.display = 'block';
