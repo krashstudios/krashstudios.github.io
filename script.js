@@ -59,7 +59,7 @@ function getWeather(evt) {
    httpRequest.onreadystatechange = fillWeather;
 }
 
-function gillWeather() {
+function fillWeather() {
   if (httpRequest.readyState === 4 && httpRequest.status === 200) {
     weatherReport = JSON.parse(httpRequest.responseText);
   }
