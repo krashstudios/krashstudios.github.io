@@ -437,6 +437,7 @@
       </footer>
 
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
 // Chapter 3 Case Project
     // Reference: https://www.w3schools.com/jsref/jsref_getday.asp
@@ -575,7 +576,8 @@
 
       /* global variables */
       var formValidity = true;
-      var errorDiv = document.getElementById('errorText');
+    // commented out for jQuery
+      // var errorDiv = document.getElementById('errorText');
 
       /* validate required fields */
     function validateRequired() {
@@ -617,13 +619,19 @@
       if (requiredValidity === false) {
         throw 'Please complete all fields.'
       }
-      errorDiv.style.display = 'none';
-      errorDiv.innerHTML = '';
+    // commented out for jQuery
+      // errorDiv.style.display = 'none';
+      // errorDiv.innerHTML = '';
+      $("#errorText").hide();
+      $("#errorText").html("");
       }
 
       catch(msg) {
-      errorDiv.style.display = 'block';
-      errorDiv.innerHTML = msg;
+    // commented out for jQuery
+      // errorDiv.style.display = 'block';
+      // errorDiv.innerHTML = msg;
+      $("#errorText").show();
+      $("#errorText").html(msg);
       formValidity = false;
       }
       }
@@ -645,8 +653,11 @@
         }
 
         catch(msg) {
-        errorDiv.style.display = 'block';
-        errorDiv.innerHTML = msg;
+      // commented out for jQuery
+        // errorDiv.style.display = 'block';
+        // errorDiv.innerHTML = msg;
+        $("#errorText").show();
+        $("#errorText").html(msg);
         formValidity = false;
         }
       }
@@ -665,8 +676,11 @@
         }
 
         catch(msg) {
-          errorDiv.style.display = 'block';
-          errorDiv.innerHTML = msg;
+        // commented out for jQuery
+          // errorDiv.style.display = 'block';
+          // errorDiv.innerHTML = msg;
+          $("#errorText").show();
+          $("#errorText").html(msg);
           formValidity = false;
         }
       }
@@ -683,8 +697,11 @@
         }
 
         catch(msg) {
-          errorDiv.style.display = 'block';
-          errorDiv.innerHTML = msg;
+        // commented out for jQuery
+          // errorDiv.style.display = 'block';
+          // errorDiv.innerHTML = msg;
+          $("#errorText").show();
+          $("#errorText").html(msg);
           formValidity = false;
         }
       }
@@ -701,19 +718,24 @@
         }
 
         catch(msg) {
-          errorDiv.style.display = 'block';
-          errorDiv.innerHTML = msg;
+        // commented out for jQuery
+          // errorDiv.style.display = 'block';
+          // errorDiv.innerHTML = msg;
+          $("#errorText").show();
+          $("#errorText").html(msg);
           formValidity = false;
         }
       }
 
       /* validate form */
       function validateForm(evt) {
-      if (evt.preventDefault) {
-      evt.preventDefault(); // prevent form from submitting
-      } else {
-      evt.returnValue = false; // prevent form from submitting in IE8
-      }
+    // commented out for jQuery
+      // if (evt.preventDefault) {
+      // evt.preventDefault(); // prevent form from submitting
+      // } else {
+      // evt.returnValue = false; // prevent form from submitting in IE8
+      // }
+      evt.preventDefault();
       formValidity = true; // reset value for revalidation
 
       validateRequired();
@@ -723,7 +745,9 @@
       validateMessage();
 
       if (formValidity === true) {
-      document.getElementsByTagName('form')[0].submit();
+    // commented out for jQuery
+      // document.getElementsByTagName('form')[0].submit();
+      $("form").submit();
       }
       }
 
@@ -737,12 +761,13 @@
 
       /* create event listeners */
       function createEventListeners() {
-      var form = document.getElementsByTagName('form')[0];
-      if (form.addEventListener) {
-      form.addEventListener('submit', validateForm, false);
-      } else if (form.attachEvent) {
-      form.attachEvent('onsubmit', validateForm);
-      }
+      // var form = document.getElementsByTagName('form')[0];
+      // if (form.addEventListener) {
+      // form.addEventListener('submit', validateForm, false);
+      // } else if (form.attachEvent) {
+      // form.attachEvent('onsubmit', validateForm);
+      // }
+      $("#submit-btn").click(validateForm);
       }
 
       /* run initial form configuration functions */
@@ -761,5 +786,6 @@
 
     </script>
     <script src="js/geolocation.js"></script>
+
   </body>
 </html>
