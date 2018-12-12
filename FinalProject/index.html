@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>JavaScript final assignment</title>
+  <link rel="stylesheet" href="assets/styles/googlecode.css">
+  <link rel="stylesheet" href="assets/combined.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic' rel='stylesheet' type='text/css'>
+  <script src="assets/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+  <article>
+    <h1>Introduction</h1>
+
+    <p>For this final assignment we will be taking a look at what a function is, how it is structured and build a working function for a private contractor that sells mechandise online. For each product that is sold the contractor pays half of what is made on each item, then with the other half, thirty percent must be withheld for taxes, ten percent for savings, and finaly ten percent for charity.</p>
+
+    <p>The function must be able to take in the input values from a form and calculate how the money is to be devided and how much is left over for profit.</p>
+
+    <hr>
+
+    <h1>What is a function</h1>
+    <p class="attention-grabber">A function is a block of code that performs an action or returns a value. Functions make reusing code easier so that you dont have to keep re-writing out the same code when it's needed, which makes your program more modular and efficient.</p>
+
+    <h2>Defining a Function</h2>
+
+    <p>There are two different ways to define a function in JavaScript:</p>
+
+    <p>A <strong>Function Declaration</strong> defines a named function.</p>
+    <blockquote>
+      <p>
+        A <strong>named function</strong> is a set of related statements that is assigned a name. You can use this name to reference, or call, this set of statements in other parts of your code.
+      </p>
+      <footer>
+        <cite>—JavaScript The Web Warrior Series pg.74</cite>
+      </footer>
+    </blockquote>
+
+    <p>The syntax for defining a named function is:</p>
+    <pre>
+      <code>
+        function name (parameters) {
+          statements;
+        }
+      </code>
+    </pre>
+
+    <p>Named functions are generally used when you want to reuse the function statements within your code.</p>
+
+    <p>A <strong>Function Expression</strong> defines a named or anonymous function.</p>
+    <blockquote>
+      <p>
+        An <strong>anonymous function</strong>, . . . is a set of related statements with no name assigned to it. The statements in an anonymous function work only in a single context—the place in the code where they are located. You cannot reference an anonymous function anywhere else in your code.
+      </p>
+      <footer>
+        <cite>—JavaScript The Web Warrior Series pg.74</cite>
+      </footer>
+    </blockquote>
+
+    <p>The syntax for defining an anonymous function is the same as a named function exept that it does not specify a name:</p>
+    <pre>
+      <code class="JavaScript">
+        function (parameters) {
+          statements;
+        }
+      </code>
+    </pre>
+
+    <p>Anonymous function are used for statements that you need to run only once.</p>
+
+    <p>For what we are going to do, we will use a <strong>named function</strong>. Let's define and name our function.</p>
+
+    <pre>
+      <code>
+        divideSaleTotals (parameters) {
+          statements;
+        }
+      </code>
+    </pre>
+
+    <p>Our named function now has the name <strong>divideSaleTotals</strong>. We are still missing the parameters and statements that will make our function, function.</p>
+
+    <p>Our function actually looks like this:</p>
+    <pre>
+      <code>
+        divideSaleTotals () {
+
+        }
+      </code>
+    </pre>
+
+    <h2>Parameters vs. Arguments</h2>
+
+    <h4>Parameters</h4>
+
+    <blockquote>
+      <p>
+        Parameters are placed within the parentheses that follow a function name. A <strong>parameter</strong> is a variable that is used within a function. Placing a parameter name within the parentheses of a function definition is the equivalent of declaring a new variable.
+      </p>
+      <footer>
+        <cite>—JavaScript The Web Warrior Series pg.75</cite>
+      </footer>
+    </blockquote>
+
+    <p>Here's an example with two parameters - parameter1 & parameter2:</p>
+
+    <pre>
+      <code>
+        const parameter1 = true;
+        const parameter2 = false;
+
+        funtion twoParameters<strong> (parameter1, parameter2)</strong> {
+          console.log(parameter1, parameter2);
+        }
+      </code>
+    </pre>
+
+    <h4>Arguments</h4>
+
+    <p>Arguments are the values the function receives from each parameter when the function is executed (invoked). In the above example, our two arguments are <strong>true</strong> & <strong>false</strong></p>
+
+    <p>For our function we only have one <strong>perameter</strong> that takes in one <strong>argument</strong>. The sales - item total.</p>
+
+    <pre>
+      <code>
+        divideSaleTotals (<strong>itemTotal</strong>) {
+          statements;
+        }
+      </code>
+    </pre>
+
+    <h2>Function statements</h2>
+
+    <blockquote>
+      <p>
+        Following the parentheses that contain the function parameters is a set of braces (called <strong>function braces</strong>) that contain the function statements. <strong>Function statements</strong> are the statements that do the actual work of the function,
+      </p>
+      <footer>
+        <cite>—JavaScript The Web Warrior Series pg.75</cite>
+      </footer>
+    </blockquote>
+
+    <p>Our particular function needs statements to figure out the items cost (which is half of the sales price), then from the contractors half; thirty percent needs to be calulated for tax withholdings, ten percent for savings after taxes have been taken out, and ten percent for charity leaving us with whats left over as profit.</p>
+
+    <p>Our statements might look something like this:</p>
+
+    <pre>
+      <code>
+        divideSaleTotals (itemTotal) {<strong>
+          var itemCost = itemTotal / 2;
+          var taxes = itemCost * '.3';
+          var tenPercent = (itemCost - taxes) * '.1';
+          var profit = itemCost - taxes - (tenPercent * 2);</strong>
+        }
+      </code>
+    </pre>
+
+    <p>The statements presented above calculate the values that we need to output to the user. In order to do this we need to return the values to the html document with a couple more statements.</p>
+
+    <pre>
+      <code>
+        function divideSaleTotals(itemTotal) {
+          ...<strong>
+          var itemCostOutput = document.getElementById('itemCost');
+          itemCostOutput.innerHTML = '$' + itemCost.toFixed(2);
+
+          var taxesOutput = document.getElementById('taxes');
+          taxesOutput.innerHTML = '$' + taxes.toFixed(2);
+
+          var savingsOutput = document.getElementById('savings');
+          savingsOutput.innerHTML = '$' + tenPercent.toFixed(2);
+
+          var charityOutput = document.getElementById('charity');
+          charityOutput.innerHTML = '$' + tenPercent.toFixed(2);
+
+          var profitsOutput = document.getElementById('profits');
+          profitsOutput.innerHTML = '$' + profit.toFixed(2);
+          </strong>
+        }
+      </code>
+    </pre>
+
+    <p>The added statements call on an html div element with a specific id to display the values the function has calulated.</p>
+
+    <h2>Invoking a Function.</h2>
+
+    <p>Functions execute when the function is called. This process is known as invocation. You can invoke a function by referencing the function name, followed by an open and closed parenthesis: ().</p>
+
+    <p>To call our function we will add <strong>onclick="function_name()"</strong> to the forms submit button that invokes our function.</p>
+
+
+    <pre>
+      <code>
+        &lt;form&gt;
+          ...
+          &lt;button onclick="divideSaleTotals()"&gt;Calculate&lt;/button&gt;
+        &lt;/form&gt;
+      </code>
+    </pre>
+
+    <p>In order for this to work correctly remember that we are passing in a <strong>parameter</strong> that takes an <strong>argument</strong> from the forms input. To do this we call it between the opening and closing braces in the forms button onclick.</p>
+
+    <pre>
+      <code>
+        &lt;form&gt;
+          ...
+          &lt;button onclick="divideSaleTotals(<strong>document.getElementById('input').value</strong>)"&gt;Calculate&lt;/button&gt;
+        &lt;/form&gt;
+      </code>
+    </pre>
+
+    <p>With all this in place our function should work correctly.</p>
+
+    <h2>Our function</h2>
+    <form action="index.html#input">
+      Sale Total: <input type="text" id="input">
+      <button class="btn" id="btn" onclick="divideSaleTotals(document.getElementById('input').value)">Calculate</button>
+    </form>
+    <div class="calcOutPut"><span>Item Cost:</span><div class="outPut" id="itemCost"></div></div>
+    <div class="calcOutPut"><span>Taxes:</span><div class="outPut" id="taxes"></div></div>
+    <div class="calcOutPut"><span>Savings:</span><div class="outPut" id="savings"></div></div>
+    <div class="calcOutPut"><span>Charity:</span><div class="outPut" id="charity"></div></div>
+    <div class="calcOutPut"><span>Profits:</span><div class="outPut" id="profits"></div></div>
+
+  </article>
+
+  <footer>
+    <p>
+      <small>
+        Build on the <a href="https://matejlatin.github.io/Gutenberg/">Gutenberg</a> Typography Starter Kit. Handcrafted by <a href="https://matejlatin.co.uk/">Matej Latin</a>. <a href="license.txt">CC License</a>.
+      </small>
+    </p>
+  </footer>
+
+  <script src="assets/combined.min.js"></script>
+  <script src="assets/function.js"></script>
+</body>
+</html>
