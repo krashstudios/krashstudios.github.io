@@ -748,6 +748,10 @@ Desktop Media Query - .right p
   width: 50%;
 }
 
+.topWhiteSpace {
+  padding-top: 4.5em;
+}
+
 
 /* Home Page
    ========================================================================== */
@@ -1020,6 +1024,9 @@ Meet the Doctors
   text-align: left;
 }
 
+.dr-bio.morgan {
+  padding-bottom: 100px;
+}
 /*
 Tablet Portrait Media Query - .dr-bio
 1. Aligns Dr img to the left
@@ -1056,6 +1063,87 @@ Tablet Portrait Media Query - .dr-pic
 
 /* Technology Page
    ========================================================================== */
+#optomap-imaging {
+  height: auto;
+  width: 100%;
+}
+
+@media screen and (min-width:900px) {
+  #optomap {
+    padding-top: 4rem;
+  }
+
+  #optomap-imaging {
+    height: auto;
+    width: 50%;
+    padding-left: 4rem;
+  }
+  #optomap p:nth-of-type(3) {
+    padding-top: 3rem;
+  }
+  #optomap p:nth-of-type(4) {
+    padding-top: 2rem;
+  }
+
+  #huvitz {
+    padding-top: 6rem;
+  }
+
+  #huvitz img {
+    padding-right: 4em;
+    float: left;
+  }
+
+  #oct {
+    padding-top: 12rem;
+  }
+  #oct img {
+    padding: 1.5em;
+    float: right;
+  }
+
+  #CornealAnalyzer {
+    padding-top: 4rem;
+  }
+  #CornealAnalyzer img {
+    padding: 1.5em;
+    float: left;
+  }
+
+  #MaculaPigmentDensitometer {
+    padding-top: 4rem;
+  }
+  #MaculaPigmentDensitometer img {
+    padding: 1.5em;
+    float: right
+  }
+
+  #VisualField {
+    padding-top: 4rem;
+  }
+  #VisualField img {
+    padding: 1.5rem;
+    float: left;
+  }
+
+  #fundusCamera{
+    padding-top: 14rem;
+  }
+  #fundusCamera img {
+    padding: 1.5rem;
+    float: right;
+  }
+
+  #CornealPachymetry {
+    padding-top: 8em;
+  }
+  #CornealPachymetry img {
+    padding: 1.5rem;
+    float: left;
+  }
+}
+
+
 
 
 
@@ -1586,6 +1674,13 @@ i.fa-star-half-alt {
 /* ==========================================================================
    Colors & Filters
    ========================================================================== */
+.fLeft {
+  float: left;
+}
+.fRight {
+  float: right;
+}
+
 /*
 Filters
 */
